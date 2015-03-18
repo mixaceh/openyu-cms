@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="friendDao" class="org.openyu.cms.friend.dao.impl.FriendDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="friendService" class="org.openyu.cms.friend.service.impl.FriendServiceImpl"
+		parent="appServiceSupporter">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="friendServiceTxPointcut" expression="bean(friendService)" />
+		<aop:advisor id="friendServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="friendServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertFriend -->
+	<bean id="friendInsertFriendAdvice"
+		class="org.openyu.cms.friend.service.aop.FriendInsertFriendInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="friendInsertFriendPointcut"
+			expression="execution(* org.openyu.cms.friend.service.impl.FriendServiceImpl.insertFriend*(..))" />
+		<aop:advisor id="friendInsertFriendAdvisor" advice-ref="friendInsertFriendAdvice"
+			pointcut-ref="friendInsertFriendPointcut" />
+	</aop:config>
+
+	<!-- updateFriend -->
+	<bean id="friendUpdateFriendAdvice"
+		class="org.openyu.cms.friend.service.aop.FriendUpdateFriendInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="friendUpdateFriendPointcut"
+			expression="execution(* org.openyu.cms.friend.service.impl.FriendServiceImpl.updateFriend*(..))" />
+		<aop:advisor id="friendUpdateFriendAdvisor" advice-ref="friendUpdateFriendAdvice"
+			pointcut-ref="friendUpdateFriendPointcut" />
+	</aop:config>
+
+	<!-- deleteFriend -->
+	<bean id="friendDeleteFriendAdvice"
+		class="org.openyu.cms.friend.service.aop.FriendDeleteFriendInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="friendDeleteFriendPointcut"
+			expression="execution(* org.openyu.cms.friend.service.impl.FriendServiceImpl.deleteFriend*(..))" />
+		<aop:advisor id="friendDeleteFriendAdvisor" advice-ref="friendDeleteFriendAdvice"
+			pointcut-ref="friendDeleteFriendPointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="friendLogDao" class="org.openyu.cms.friend.dao.impl.FriendLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="friendLogService" class="org.openyu.cms.friend.service.impl.FriendLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="friendLogServiceTxPointcut" expression="bean(friendLogService)" />
+		<aop:advisor id="friendLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="friendLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_friend_list" class="org.openyu.cms.friend.web.freeMarker.FriendListDirective" />
+
+	<bean id="cms_friend" class="org.openyu.cms.friend.web.freeMarker.FriendDirective" />
+
+</beans>

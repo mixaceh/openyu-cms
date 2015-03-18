@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="guestbookTypeDao" class="org.openyu.cms.guestbookType.dao.impl.GuestbookTypeDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="guestbookTypeService"
+		class="org.openyu.cms.guestbookType.service.impl.GuestbookTypeServiceImpl"
+		parent="appServiceSupporter" init-method="initialize">
+	</bean>
+
+	<!-- adapter -->
+	<bean id="guestbookTypeBeanAdapter"
+		class="org.openyu.cms.guestbookType.service.adapter.GuestbookTypeBeanAdapter"
+		parent="appBeanAdapter" init-method="initialize">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="guestbookTypeServiceTxPointcut"
+			expression="bean(guestbookTypeService)" />
+		<aop:advisor id="guestbookTypeServiceTxAdvisor"
+			advice-ref="txAdvice" pointcut-ref="guestbookTypeServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertGuestbookType -->
+	<bean id="guestbookTypeInsertGuestbookTypeAdvice"
+		class="org.openyu.cms.guestbookType.service.aop.GuestbookTypeInsertGuestbookTypeInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="guestbookTypeInsertGuestbookTypePointcut"
+			expression="execution(* org.openyu.cms.guestbookType.service.impl.GuestbookTypeServiceImpl.insertGuestbookType*(..))" />
+		<aop:advisor id="guestbookTypeInsertGuestbookTypeAdvisor" advice-ref="guestbookTypeInsertGuestbookTypeAdvice"
+			pointcut-ref="guestbookTypeInsertGuestbookTypePointcut" />
+	</aop:config>
+
+	<!-- updateGuestbookType -->
+	<bean id="guestbookTypeUpdateGuestbookTypeAdvice"
+		class="org.openyu.cms.guestbookType.service.aop.GuestbookTypeUpdateGuestbookTypeInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="guestbookTypeUpdateGuestbookTypePointcut"
+			expression="execution(* org.openyu.cms.guestbookType.service.impl.GuestbookTypeServiceImpl.updateGuestbookType*(..))" />
+		<aop:advisor id="guestbookTypeUpdateGuestbookTypeAdvisor" advice-ref="guestbookTypeUpdateGuestbookTypeAdvice"
+			pointcut-ref="guestbookTypeUpdateGuestbookTypePointcut" />
+	</aop:config>
+
+	<!-- deleteGuestbookType -->
+	<bean id="guestbookTypeDeleteGuestbookTypeAdvice"
+		class="org.openyu.cms.guestbookType.service.aop.GuestbookTypeDeleteGuestbookTypeInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="guestbookTypeDeleteGuestbookTypePointcut"
+			expression="execution(* org.openyu.cms.guestbookType.service.impl.GuestbookTypeServiceImpl.deleteGuestbookType*(..))" />
+		<aop:advisor id="guestbookTypeDeleteGuestbookTypeAdvisor" advice-ref="guestbookTypeDeleteGuestbookTypeAdvice"
+			pointcut-ref="guestbookTypeDeleteGuestbookTypePointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="guestbookTypeLogDao" class="org.openyu.cms.guestbookType.dao.impl.GuestbookTypeLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="guestbookTypeLogService" class="org.openyu.cms.guestbookType.service.impl.GuestbookTypeLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="guestbookTypeLogServiceTxPointcut" expression="bean(guestbookTypeLogService)" />
+		<aop:advisor id="guestbookTypeLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="guestbookTypeLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_guestbook_type_list"
+		class="org.openyu.cms.guestbookType.web.freeMarker.GuestbookTypeListDirective" />
+
+	<bean id="cms_guestbook_type"
+		class="org.openyu.cms.guestbookType.web.freeMarker.GuestbookTypeDirective" />
+</beans>

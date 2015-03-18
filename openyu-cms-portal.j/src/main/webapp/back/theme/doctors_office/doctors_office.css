@@ -1,0 +1,769 @@
+/******* structure and layout *******/
+body {
+	margin: 10px 10px 0px 0;
+	padding: 0px;
+	font-family: verdana, arial, sans-serif;
+	font-size: 12px;
+}
+
+.leftcontent {
+	position: absolute;
+	left: 0px;
+	top: 126px;
+	width: 200px;
+	background: #ffffff url(img/left_bg.gif);
+	border: none;
+	text-align: left;
+}
+
+.left_news {
+	position: relative;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #818181;
+	margin: 0 0 0 0;
+	padding: 10px 5px 5px 10px;
+	width: 185px;
+	background: #ffffff;
+}
+
+#centercontent {
+	background: #ffffff;
+	margin-top: 10px;
+	margin-left: 199px;
+	margin-right: 199px;
+	line-height: 1.4em;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	margin-left: 201px;
+	margin-right: 201px;
+}
+
+html>body #centercontent {
+	margin-left: 201px;
+	margin-right: 201px;
+}
+
+#rightcontent {
+	position: absolute;
+	right: 10px;
+	top: 130px;
+	width: 200px;
+	background: #ffffff;
+	/*border: 1px solid #7db26e;*/
+}
+
+.right_news {
+	position: relative;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #818181;
+	margin: 0 0 0 0;
+	padding: 10px 5px 5px 10px;
+	width: 185px;
+	background: #ffffff;
+}
+
+#banner {
+	background: #ffffff url(img/header_bg.gif);
+	height: 116px;
+	border: none;
+	voice-family: "\"}\"";
+	voice-family: inherit;
+	height: 39px;
+	color: #000000;
+}
+
+html>body #banner {
+	height: 116px;
+}
+
+.footer {
+	position: relative;
+	margin: 50px 0 10px 0;
+	padding: 5px 10px 5px 10px;
+	background: #ffffff;
+	/* yet another problem with IE, this time with the boder of the footer. The top portion of the border was not showing up in IE, but was fine in the other browsers. Although i know it's bad form to say "screw it", i'm saying it anyway because i really don't want to take the time to work around yet another IE bug. */
+	border: 1px solid #ffffff;
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #B7D7AF;
+}
+
+.page_title {
+	position: absolute;
+	top: 53px;
+	left: 175px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.top_links {
+	/* i positioned the top links absolutely within the banner area because of a problem i saw in IE when i did a float-right, and i didn't want to take the time to figure it out. Anyway, this isn't a problem until you add more links to the top nav or edit the text links. If/when you do, you'll have to adjust the position of the area by moving it right or left. 600px isthe default */
+	position: absolute;
+	top: 10px;
+	/*left:600px;*/
+	left: 180px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+p,h1,pre {
+	margin: 0px 10px 10px 10px;
+}
+
+#rightcontent p {
+	font-size: 8pt;
+}
+
+/******* left navigation *******/
+#leftnav ul {
+	margin: 10px 0 10px 5px;
+	padding: 0 0 0 0;
+	background: transparent;
+}
+
+#leftnav li {
+	list-style-type: none;
+	background: #B7D7AF;
+	color: #daa520;
+	text-align: left;
+	padding: 0 0 0 0;
+	margin-bottom: 6px;
+}
+
+#leftnav li a {
+	color: #254117;
+	font-weight: bold;
+	text-decoration: none;
+	display: block;
+	padding: 6px;
+	border: 2px solid #fff;
+}
+
+#leftnav li a:hover {
+	background: #7db26e;
+	color: #fff8dc;
+	padding: 6px;
+}
+
+#leftnav li a:hover:after {
+	/* this puts that little blue box after the left navigation links on hover */
+	background: #ffffff;
+	color: #7F9BC5;
+}
+
+/******* top navigation *******/
+#topnav ul {
+	padding: 0 0 0 0;
+	margin: 0 5px 0 0;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #ffffff;
+	float: left;
+	width: 100%;
+	background: transparent;
+	list-style: none;
+}
+
+#topnav ul li {
+	display: inline;
+	list-style: none;
+}
+
+#topnav ul li a {
+	margin: 0 5px 0 0;
+	padding: 5px 10px 5px 10px;
+	background: #b7d7af;
+	color: #306754;
+	font-weight: bold;
+	text-decoration: none;
+	float: left;
+	border: 2px solid #fff;
+}
+
+#topnav ul li a:hover {
+	background: #7db26e;
+	color: #fff8dc;
+	text-decoration: none;
+	border: 2px solid #fff;
+}
+
+/******* fonts and colors *******/
+a {
+	color: #3566a9;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #f50000;
+	text-decoration: none;
+}
+
+#footer a {
+	color: #b7d7af;
+	text-decoration: underline;
+}
+
+#footer a:hover {
+	color: #999999;
+	text-decoration: none;
+}
+
+.news_title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	font-weight: bold;
+	color: #7f9bc5;
+}
+
+.news_title_grn {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: bold;
+	color: #6C9261;
+}
+
+#page_title {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 15pt;
+	color: #7F9BC5;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+span.squares {
+	display: block;
+	float: left;
+	width: 18px;
+	height: 18px;
+	margin-right: 2px;
+	background-image: url(img/squares.gif);
+	background-repeat: no-repeat;
+}
+
+span.squares span {
+	display: none;
+}
+
+blockquote {
+	padding: 10px 10px 15px 10px;
+	background: #E5ECF7;
+	border-left: 2px solid #C7D9F5;
+	font-style: italic;
+	color: #6B84A8;
+	letter-spacing: .1em;
+}
+
+h1 {
+	font-size: 14px;
+	padding-top: 10px;
+}
+
+#banner h1 {
+	font-size: 14px;
+	padding: 10px 10px 0px 10px;
+	margin: 0px;
+}
+
+/******* lists *******/
+#list ul {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	list-style: none;
+}
+
+#list li {
+	margin: .5em 0 0 0;
+	padding: 0 0 0 15px;
+	list-style: none;
+	background: url(img/square_list.gif) no-repeat;
+	background-position: 0 .3em;
+}
+
+#list li.sub {
+	margin: .5em 0 0 .5em;
+	padding: 0 0 0 15px;
+	list-style: none;
+	background: url(img/square_list2.gif) no-repeat;
+	background-position: 0 .3em;
+}
+
+/******* images *******/
+img {
+	border: none;
+}
+
+.center {
+	text-align: center;
+}
+
+/******* workarounds and hacks *******/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {
+	display: inline-table;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {
+	height: 1%;
+}
+
+.clearfix {
+	display: block;
+}
+/* End hide from IE-mac */
+
+/******* navigation *******/
+#nav ul {
+	padding: 0 0 0 0;
+	margin: 0px 5px 5px 5px;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #ffffff;
+	float: left;
+	width: 100%;
+	background: transparent;
+	list-style: none;
+}
+
+#nav ul li {
+	display: inline;
+	list-style: none;
+}
+
+#nav ul li a {
+	margin: 0 5px 0 0;
+	padding: 5px 10px 5px 10px;
+	background: #3566a9;
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	float: left;
+	border: 2px solid #fff;
+}
+
+#nav ul li a:hover {
+	background: #7f9bc5;
+	color: #ffff00;
+	text-decoration: none;
+	border: 2px solid #fff;
+}
+
+/******* operation navigation *******/
+#opnav ul {
+	padding: 0px;
+	margin: 0px 5px 5px 5px;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #3566a9;
+	float: left;
+	width: 100%;
+	background: transparent;
+	list-style: none;
+}
+
+#opnav ul li {
+	display: inline;
+	list-style: none;
+}
+
+#opnav ul li a {
+	margin: 0 5px 0 0;
+	padding: 5px;
+	color: #3566a9;
+	font-weight: bold;
+	text-decoration: underline;
+	float: left;
+}
+
+#opnav ul li a:hover {
+	color: #f50000;
+	text-decoration: none;
+}
+
+#pagination {
+	clear: both;
+	margin: 5px auto 5px auto;
+	color: #999999;
+	font-size: 12px;
+}
+
+#pagination a {
+	color: #7db26e;
+	text-decoration: underline;
+}
+
+#pagination a:hover {
+	color: #f50000;
+	text-decoration: none;
+}
+
+#breadcrumb {
+	clear: both;
+	margin: 5px auto 5px auto;
+	color: #999999;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+#breadcrumb a {
+	color: #347235;
+	text-decoration: underline;
+}
+
+#breadcrumb a:hover {
+	color: #f50000;
+	text-decoration: none;
+}
+
+.message {
+	clear: both;
+	margin: 1px;
+	font-size: 12px;
+	color: #364f56;
+}
+
+.feature {
+	clear: both;
+	padding: 5px;
+	border: 1px solid #7DB26E;
+}
+
+.feature a {
+	color: #347235;
+	text-decoration: underline;
+}
+
+.feature a:hover {
+	color: #f50000;
+	text-decoration: none;
+}
+
+.story {
+	clear: both;
+}
+
+/************************************/
+.form {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.form ul,.form ol {
+	list-style: none;
+}
+
+.form li {
+	border-bottom: 1px solid #fff;
+}
+
+.form label {
+	
+}
+
+.form input {
+	
+}
+
+.form table {
+	
+}
+
+/***********************************
+ crud 
+***********************************/
+.list {
+	border-collapse: separate;
+	border-spacing: 1px;
+	background-color: #c8dcf0;
+	margin: 5px auto 5px auto;
+	font-size: 12px;
+}
+
+.list thead {
+	background-image: url(thead-background.png);
+	font-weight: bold;
+	color: #364f56;
+	vertical-align: middle;
+	text-align: middle;
+}
+
+.listcheckbox {
+	text-align: left;
+}
+
+.list th {
+	padding: 5px;
+}
+
+.list tbody tr {
+	background-color: #fff;
+}
+
+.list tbody tr:hover {
+	background-color: #def;
+}
+
+.list td {
+	padding: 5px;
+}
+
+.free {
+	border-collapse: separate;
+	border-spacing: 1px;
+	background-color: #c8dcf0;
+	margin: 5px auto 5px auto;
+	font-size: 12px;
+	line-height: 26px;
+}
+
+.free thead {
+	background-image: url(thead-background.png);
+	font-weight: bold;
+	color: #364f56;
+	vertical-align: middle;
+	text-align: middle;
+}
+
+.free th {
+	padding: 3px;
+}
+
+.free tbody tr {
+	background-color: #fff;
+}
+
+.free td {
+	padding: 3px;
+	white-space: nowrap;
+}
+
+.freelabeltitle {
+	background-color: #eef2fe;
+	color: #000;
+	font-weight: bolder;
+}
+
+.freelabel {
+	background-color: #e6f2fe;
+	color: #000;
+}
+
+.freebutton {
+	text-align: center;
+	font-weight: bolder;
+}
+
+.view {
+	border-collapse: separate;
+	border-spacing: 1px;
+	background-color: #93b666;
+	margin: 5px auto 5px auto;
+	font-size: 12px;
+	line-height: 26px;
+}
+
+.view thead {
+	background-image: url(thead-background.png);
+	font-weight: bold;
+	color: #7db26e;
+	vertical-align: middle;
+	text-align: middle;
+}
+
+.view th {
+	padding: 3px;
+}
+
+.view tbody tr {
+	background-color: #fff;
+}
+
+.view td {
+	padding: 3px;
+	white-space: nowrap;
+}
+
+.viewlabeltitle {
+	background-color: #eef2fe;
+	color: #000;
+	font-weight: bolder;
+}
+
+.viewlabel {
+	background-color: #e6f8e0;
+	color: #000;
+}
+
+.viewbutton {
+	text-align: center;
+	font-weight: bolder;
+}
+
+.search {
+	border-collapse: separate;
+	border-spacing: 1px;
+	/*background-color: #7db26e;*/
+	background-color: #fff;
+	margin: 0px;
+	font-size: 12px;
+	line-height: 26px;
+}
+
+.search thead { /*background-image: url(thead-background.png);*/
+	font-weight: bold;
+	color: #7db26e;
+	vertical-align: middle;
+	text-align: middle;
+}
+
+.search th {
+	padding: 1px;
+}
+
+.search tbody tr {
+	background-color: #fff;
+}
+
+.search td {
+	padding: 1px;
+	white-space: nowrap;
+}
+
+.searchlabel { /*background-color: #e3f6ce;*/
+	background-color: #fff;
+	color: #000;
+}
+
+.searchbutton {
+	text-align: center;
+	font-weight: bolder;
+}
+
+#audit {
+	
+}
+
+.log {
+	border-collapse: separate;
+	border-spacing: 1px;
+	background-color: #999999;
+	margin: 5px 0px 5px 0px;
+	font-size: 12px;
+	color: #999999;
+	line-height: 18px;
+}
+
+.log thead { /*background-image: url(thead-background.png);*/
+	font-weight: bold;
+	color: #364f56;
+	vertical-align: middle;
+	text-align: middle;
+}
+
+.log th {
+	padding: 3px;
+}
+
+.log tbody tr {
+	background-color: #fff;
+}
+
+.log td {
+	padding: 3px;
+	white-space: nowrap;
+}
+
+.loglabeltitle {
+	color: #999999;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.loglabel {
+	background-color: #f2f2f2;
+	color: #000;
+}
+
+.logbutton {
+	text-align: center;
+	font-weight: bolder;
+}
+
+.textleft {
+	text-align: left;
+}
+
+.textright {
+	text-align: right;
+}
+
+.textmiddle {
+	text-align: middle;
+}
+
+/***********************************
+ struts2 
+***********************************/
+.actionMessage {
+	padding: 3px;
+	margin: 0px;
+}
+
+.actionMessage li {
+	list-style-type: none;
+	font-size: 12px;
+	color: #364f56;
+}
+
+.wwFormTable {
+	
+}
+
+.label {
+	font-style: normal;
+}
+
+.errorLabel {
+	font-style: normal;
+	color: #f50000;
+}
+
+.errorMessage {
+	padding: 3px;
+	margin: 0px;
+}
+
+.errorMessage li {
+	list-style-type: none;
+	font-size: 12px;
+	color: #f50000;
+	font-weight: normal;
+}
+
+.checkboxLabel {
+	
+}
+
+.checkboxErrorLabel {
+	color: f50000;
+}
+
+.required {
+	color: f50000;
+}
+
+.tdLabel {
+	text-align: right;
+	vertical-align: top;
+}

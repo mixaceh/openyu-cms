@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ftpCollector>
+    <id>org.openyu.cms.ftp.vo.FtpCollector</id>
+    <inquiry>
+        <sorts>
+            <names>
+                <entry key="zh_TW">序號</entry>
+                <entry key="zh_CN">序号</entry>
+                <entry key="en_US">Sequence</entry>
+            </names>
+            <id>seq</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">名稱</entry>
+                <entry key="zh_CN">名称</entry>
+                <entry key="en_US">Name</entry>
+            </names>
+            <id>names</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <export>false</export>
+    </inquiry>
+    <defaultFtp>DEFAULT</defaultFtp>
+    <ftps>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <names/>
+                <port>21</port>
+                <timeout>0</timeout>
+            </value>
+        </entry>
+    </ftps>
+    <encodingOptions>UTF-8</encodingOptions>
+    <encodingOptions>ISO-8859-1</encodingOptions>
+    <encodingOptions>BIG5</encodingOptions>
+    <encodingOptions>GBK</encodingOptions>
+</ftpCollector>

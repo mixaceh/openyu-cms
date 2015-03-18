@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<groupCollector>
+    <id>org.openyu.cms.group.vo.GroupCollector</id>
+    <inquiry>
+        <sorts>
+            <names>
+                <entry key="zh_TW">排序</entry>
+                <entry key="zh_CN">排序</entry>
+                <entry key="en_US">Sort</entry>
+            </names>
+            <id>sort</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">序號</entry>
+                <entry key="zh_CN">序号</entry>
+                <entry key="en_US">Sequence</entry>
+            </names>
+            <id>seq</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">名稱</entry>
+                <entry key="zh_CN">名称</entry>
+                <entry key="en_US">Name</entry>
+            </names>
+            <id>names</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <export>false</export>
+    </inquiry>
+    <defaultGroup>DEFAULT</defaultGroup>
+    <groups>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <names/>
+                <sort>10</sort>
+                <dayUpload>0</dayUpload>
+                <maxUpload>0</maxUpload>
+                <captcha>true</captcha>
+                <check>true</check>
+                <defaultz>false</defaultz>
+            </value>
+        </entry>
+    </groups>
+</groupCollector>

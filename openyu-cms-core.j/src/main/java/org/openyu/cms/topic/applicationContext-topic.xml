@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="topicDao" class="org.openyu.cms.topic.dao.impl.TopicDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="topicService" class="org.openyu.cms.topic.service.impl.TopicServiceImpl"
+		parent="appServiceSupporter">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="topicServiceTxPointcut" expression="bean(topicService)" />
+		<aop:advisor id="topicServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="topicServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertTopic -->
+	<bean id="topicInsertTopicAdvice"
+		class="org.openyu.cms.topic.service.aop.TopicInsertTopicInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="topicInsertTopicPointcut"
+			expression="execution(* org.openyu.cms.topic.service.impl.TopicServiceImpl.insertTopic*(..))" />
+		<aop:advisor id="topicInsertTopicAdvisor" advice-ref="topicInsertTopicAdvice"
+			pointcut-ref="topicInsertTopicPointcut" />
+	</aop:config>
+
+	<!-- updateTopic -->
+	<bean id="topicUpdateTopicAdvice"
+		class="org.openyu.cms.topic.service.aop.TopicUpdateTopicInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="topicUpdateTopicPointcut"
+			expression="execution(* org.openyu.cms.topic.service.impl.TopicServiceImpl.updateTopic*(..))" />
+		<aop:advisor id="topicUpdateTopicAdvisor" advice-ref="topicUpdateTopicAdvice"
+			pointcut-ref="topicUpdateTopicPointcut" />
+	</aop:config>
+
+	<!-- deleteTopic -->
+	<bean id="topicDeleteTopicAdvice"
+		class="org.openyu.cms.topic.service.aop.TopicDeleteTopicInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="topicDeleteTopicPointcut"
+			expression="execution(* org.openyu.cms.topic.service.impl.TopicServiceImpl.deleteTopic*(..))" />
+		<aop:advisor id="topicDeleteTopicAdvisor" advice-ref="topicDeleteTopicAdvice"
+			pointcut-ref="topicDeleteTopicPointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="topicLogDao" class="org.openyu.cms.topic.dao.impl.TopicLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="topicLogService" class="org.openyu.cms.topic.service.impl.TopicLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="topicLogServiceTxPointcut" expression="bean(topicLogService)" />
+		<aop:advisor id="topicLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="topicLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_topic_list" class="org.openyu.cms.topic.web.freeMarker.TopicListDirective" />
+
+	<bean id="cms_topic" class="org.openyu.cms.topic.web.freeMarker.TopicDirective" />
+
+</beans>

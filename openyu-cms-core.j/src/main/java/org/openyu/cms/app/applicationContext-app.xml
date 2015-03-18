@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- service -->
+	<bean id="appServiceSupporter" class="org.openyu.cms.app.service.supporter.AppServiceSupporter"
+		parent="ojServiceSupporter" abstract="true" />
+
+	<bean id="appLogServiceSupporter"
+		class="org.openyu.cms.app.service.supporter.AppLogServiceSupporter"
+		parent="baseLogServiceSupporter" abstract="true" />
+
+	<!-- adapter -->
+	<bean id="appBeanAdapter" class="org.openyu.cms.app.service.event.supporter.AppBeanAdapter"
+		parent="beanAdapter" abstract="true" />
+	<bean id="appBeanChangeAdapter"
+		class="org.openyu.cms.app.service.event.supporter.AppBeanChangeAdapter"
+		parent="beanChangeAdapter" abstract="true" />
+	<bean id="appServiceAdapter"
+		class="org.openyu.cms.app.service.event.supporter.AppServiceAdapter"
+		parent="serviceAdapter" abstract="true" />
+
+	<!-- interceptor -->
+	<bean id="appMethodInterceptorSupporter"
+		class="org.openyu.cms.app.service.aop.AppMethodInterceptorSupporter"
+		parent="baseMethodInterceptorSupporter" abstract="true" />
+
+	<!-- ws -->
+	<bean id="appWsSupporter" class="org.openyu.cms.app.ws.supporter.AppWsSupporter"
+		parent="baseWsSupporter" abstract="true" />
+
+	<!-- web interceptor -->
+	<bean id="appWebInterceptorSupporter"
+		class="org.openyu.cms.app.web.struts2.supporter.AppWebInterceptorSupporter"
+		parent="baseWebInterceptorSupporter" abstract="true" />
+
+	<!-- directive -->
+	<bean id="appDirectiveSupporter"
+		class="org.openyu.cms.app.web.freeMarker.supporter.AppDirectiveSupporter"
+		parent="baseDirectiveSupporter" abstract="true" />
+</beans>

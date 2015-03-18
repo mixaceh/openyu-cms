@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+    <id>TEST_CONFIG</id>
+    <sysDeployeePath>y32dLiiZ</sysDeployeePath>
+    <sysPort>0</sysPort>
+    <sysDefaultImg>Z</sysDefaultImg>
+    <sysEmailValidate>true</sysEmailValidate>
+    <sysDbFileUri>MFS</sysDbFileUri>
+    <sysUploadToDb>false</sysUploadToDb>
+    <servletPoint>I8rT</servletPoint>
+    <loginUrl>EI</loginUrl>
+    <processUrl>hpT9tMpcmq</processUrl>
+    <countClearTime>2014-11-20T05:20:52.250+08:00</countClearTime>
+    <countCopyTime>2014-11-20T02:06:22.850+08:00</countCopyTime>
+    <downloadCode>rCtpgMLp</downloadCode>
+    <downloadTime>490602192</downloadTime>
+    <loginErrorTimes>257066148</loginErrorTimes>
+    <loginErrorInterval>397652188</loginErrorInterval>
+    <emailHost>RuejWGnMk</emailHost>
+    <emailPort>-1247401234</emailPort>
+    <emailUsername>vOSB85XuP7</emailUsername>
+    <emailPassword>FUDX</emailPassword>
+    <emailEncoding>abYo</emailEncoding>
+    <emailPersonal>0AB</emailPersonal>
+    <forgotPasswordSubjects>
+        <entry key="zh_TW">Febg14</entry>
+    </forgotPasswordSubjects>
+    <forgotPasswordTexts>
+        <entry key="zh_TW">ywisJf1</entry>
+    </forgotPasswordTexts>
+    <registerSubjects>
+        <entry key="zh_TW">8WSsau</entry>
+    </registerSubjects>
+    <registerTexts>
+        <entry key="zh_TW">OwIXfD</entry>
+    </registerTexts>
+    <mark>false</mark>
+    <markWidth>741889290</markWidth>
+    <markHeight>1219208373</markHeight>
+    <markImagePath>m0hox</markImagePath>
+    <markContent>MXyff6Pj</markContent>
+    <markSize>-154069350</markSize>
+    <markColor>a</markColor>
+    <markAlpha>2019711054</markAlpha>
+    <markPos>-696056542</markPos>
+    <markOffsetX>-592359084</markOffsetX>
+    <markOffsetY>187204379</markOffsetY>
+    <member>false</member>
+    <register>false</register>
+    <usernameMinLen>-665915582</usernameMinLen>
+    <passwordMinLen>652707061</passwordMinLen>
+    <userImgWidth>-84148009</userImgWidth>
+    <userImgHeight>1819996872</userImgHeight>
+    <usernameReserved>ZaZhh1</usernameReserved>
+    <forgetPasswordSubjects/>
+    <forgetPasswordContexts/>
+</config>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="adSpaceDao" class="org.openyu.cms.adSpace.dao.impl.AdSpaceDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="adSpaceService" class="org.openyu.cms.adSpace.service.impl.AdSpaceServiceImpl"
+		parent="appServiceSupporter" init-method="initialize">
+	</bean>
+
+	<!-- adapter -->
+	<bean id="adSpaceBeanAdapter" class="org.openyu.cms.adSpace.service.adapter.AdSpaceBeanAdapter"
+		parent="appBeanAdapter" init-method="initialize">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="adSpaceServiceTxPointcut" expression="bean(adSpaceService)" />
+		<aop:advisor id="adSpaceServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="adSpaceServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertAdSpace -->
+	<bean id="adSpaceInsertAdSpaceAdvice"
+		class="org.openyu.cms.adSpace.service.aop.AdSpaceInsertAdSpaceInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="adSpaceInsertAdSpacePointcut"
+			expression="execution(* org.openyu.cms.adSpace.service.impl.AdSpaceServiceImpl.insertAdSpace*(..))" />
+		<aop:advisor id="adSpaceInsertAdSpaceAdvisor" advice-ref="adSpaceInsertAdSpaceAdvice"
+			pointcut-ref="adSpaceInsertAdSpacePointcut" />
+	</aop:config>
+
+	<!-- updateAdSpace -->
+	<bean id="adSpaceUpdateAdSpaceAdvice"
+		class="org.openyu.cms.adSpace.service.aop.AdSpaceUpdateAdSpaceInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="adSpaceUpdateAdSpacePointcut"
+			expression="execution(* org.openyu.cms.adSpace.service.impl.AdSpaceServiceImpl.updateAdSpace*(..))" />
+		<aop:advisor id="adSpaceUpdateAdSpaceAdvisor" advice-ref="adSpaceUpdateAdSpaceAdvice"
+			pointcut-ref="adSpaceUpdateAdSpacePointcut" />
+	</aop:config>
+
+	<!-- deleteAdSpace -->
+	<bean id="adSpaceDeleteAdSpaceAdvice"
+		class="org.openyu.cms.adSpace.service.aop.AdSpaceDeleteAdSpaceInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="adSpaceDeleteAdSpacePointcut"
+			expression="execution(* org.openyu.cms.adSpace.service.impl.AdSpaceServiceImpl.deleteAdSpace*(..))" />
+		<aop:advisor id="adSpaceDeleteAdSpaceAdvisor" advice-ref="adSpaceDeleteAdSpaceAdvice"
+			pointcut-ref="adSpaceDeleteAdSpacePointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="adSpaceLogDao" class="org.openyu.cms.adSpace.dao.impl.AdSpaceLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="adSpaceLogService" class="org.openyu.cms.adSpace.service.impl.AdSpaceLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="adSpaceLogServiceTxPointcut"
+			expression="bean(adSpaceLogService)" />
+		<aop:advisor id="adSpaceLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="adSpaceLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_ad_space_list" class="org.openyu.cms.adSpace.web.freeMarker.AdSpaceListDirective" />
+
+	<bean id="cms_ad_space" class="org.openyu.cms.adSpace.web.freeMarker.AdSpaceDirective" />
+
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+
+	<!-- welcome 
+	<package name="pub/welcome" namespace="/pub/welcome" extends="struts-default">
+
+		<action name="home" class="welcomeAction">
+			<result>WelcomeHome.jsp</result>
+		</action>
+
+		<action name="locale" class="welcomeAction" method="locale">
+			<result>WelcomeHome.jsp</result>
+		</action>
+	</package>
+-->
+	<!-- adm 
+	<package name="pub/adm" namespace="/pub/adm" extends="struts-default">
+		<action name="home" class="admAction">
+			<result>AdmHome.jsp</result>
+		</action>
+	</package>
+-->
+
+	<!-- module 
+	<include file="org/openyu/cms/module/struts-module.xml" />
+-->
+</struts>

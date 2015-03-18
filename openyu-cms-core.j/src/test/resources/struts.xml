@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- only for dev -->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.convention.classes.reload" value="false" />
+
+	<!-- general -->
+	<constant name="struts.ui.templateDir" value="struts" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.serve.static" value="false" />
+
+	<constant name="struts.action.extension" value="act" />
+	<constant name="struts.custom.i18n.resources" value="global" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<!-- upload -->
+	<constant name="struts.multipart.parser" value="jakarta" />
+	<!-- user.dir=tomcat/bin, => tomcat/bin/temp  -->
+	<constant name="struts.multipart.saveDir" value="temp" />
+	<!-- 1G -->
+	<constant name="struts.multipart.maxSize" value="1024000000" />
+	<!-- static method -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	  	
+	<!-- convention -->
+	<constant name="struts.convention.result.path" value="/WEB-INF" />
+	<constant name="struts.convention.package.locators" value="struts2" />
+
+	<!-- integrate spring -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.freemarker.manager.classname" value="org.openyu.commons.spring.SpringFreeMarkerManager" />
+
+	<!-- default -->
+	<package name="default" extends="struts-default" abstract="true">
+		<interceptors>
+			<!-- 
+			<interceptor-stack name="defaultStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="params" />
+			</interceptor-stack> 
+			-->
+
+			<!-- applicationContext-core.xml -->
+			<interceptor name="coreBackInterceptor" class="coreBackInterceptor" />
+
+			<interceptor-stack name="defaultStack">
+				<!--<interceptor-ref name="timer" /> -->
+				<!--<interceptor-ref name="logger"/> -->
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<!-- 
+				<interceptor-ref name="scopedModelDriven" />
+				 -->
+				<!-- 
+				<interceptor-ref name="modelDriven" />
+				 -->
+				<!--
+				<interceptor-ref name="fileUpload">
+				 	<param name="allowedTypes">image/bmp,image/x-png,image/gif,image/pjpeg,image/jpeg</param>
+				</interceptor-ref>
+				-->
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="multiselect" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+					<param name="validateAnnotatedMethodOnly">true</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+
+				<interceptor-ref name="coreBackInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="defaultStack" />
+	</package>
+
+	<!-- default front -->
+	<package name="defaultFront" extends="struts-default" abstract="true">
+		<interceptors>
+			<!-- 
+			<interceptor-stack name="defaultStack">
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="params" />
+			</interceptor-stack> 
+			-->
+
+			<!-- applicationContext-core.xml -->
+			<interceptor name="coreFrontInterceptor" class="coreFrontInterceptor" />
+
+			<interceptor-stack name="defaultFrontStack">
+				<!--
+				<interceptor-ref name="timer" /> 
+				-->
+				<!--
+				<interceptor-ref name="logger"/> 
+				-->
+				<interceptor-ref name="exception" />
+				<interceptor-ref name="alias" />
+				<interceptor-ref name="servletConfig" />
+				<interceptor-ref name="i18n" />
+				<interceptor-ref name="prepare" />
+				<interceptor-ref name="chain" />
+				<interceptor-ref name="debugging" />
+				<!-- 
+				<interceptor-ref name="scopedModelDriven" /> 
+				-->
+				<!-- 
+				<interceptor-ref name="modelDriven" /> 
+				-->
+				<!--
+				<interceptor-ref name="fileUpload">
+					<param name="allowedTypes">image/bmp,image/x-png,image/gif,image/pjpeg,image/jpeg</param>
+				</interceptor-ref>
+				-->
+				<interceptor-ref name="checkbox" />
+				<interceptor-ref name="multiselect" />
+				<interceptor-ref name="staticParams" />
+				<interceptor-ref name="actionMappingParams" />
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*,^struts\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="conversionError" />
+				<interceptor-ref name="validation">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+					<param name="validateAnnotatedMethodOnly">true</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">input,back,cancel,browse</param>
+				</interceptor-ref>
+
+				<interceptor-ref name="coreFrontInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="defaultFrontStack" />
+	</package>
+
+	<!-- security -->
+	<include file="struts-security.xml" />
+
+</struts>

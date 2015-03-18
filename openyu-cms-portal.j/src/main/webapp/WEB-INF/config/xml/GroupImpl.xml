@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<group>
+    <id>TEST_GROUP</id>
+    <names>
+        <entry key="zh_TW">測試群組</entry>
+        <entry key="zh_CN">测试群组</entry>
+        <entry key="en_US">Test Group</entry>
+    </names>
+    <sort>35</sort>
+    <dayUpload>620</dayUpload>
+    <maxUpload>8371</maxUpload>
+    <uploadSuffix>c2</uploadSuffix>
+    <captcha>true</captcha>
+    <check>true</check>
+    <defaultz>false</defaultz>
+</group>

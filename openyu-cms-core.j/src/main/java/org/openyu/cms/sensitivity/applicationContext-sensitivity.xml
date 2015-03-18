@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="sensitivityDao" class="org.openyu.cms.sensitivity.dao.impl.SensitivityDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="sensitivityService"
+		class="org.openyu.cms.sensitivity.service.impl.SensitivityServiceImpl"
+		parent="appServiceSupporter">
+	</bean>
+
+	<!-- txAdvisor -->
+	<aop:config>
+		<aop:pointcut id="sensitivityServiceTxPointcut"
+			expression="bean(sensitivityService)" />
+		<aop:advisor id="sensitivityServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="sensitivityServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insert -->
+	<bean id="sensitivityInsertDictionaryAdvice"
+		class="org.openyu.cms.sensitivity.service.aop.SensitivityInsertDictionaryInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="sensitivityInsertDictionaryPointcut"
+			expression="execution(* org.openyu.cms.sensitivity.service.impl.SensitivityServiceImpl.insertDictionary*(..))" />
+		<aop:advisor id="sensitivityInsertDictionaryAdvisor"
+			advice-ref="sensitivityInsertDictionaryAdvice" pointcut-ref="sensitivityInsertDictionaryPointcut" />
+	</aop:config>
+
+	<!-- update -->
+	<bean id="sensitivityUpdateDictionaryAdvice"
+		class="org.openyu.cms.sensitivity.service.aop.SensitivityUpdateDictionaryInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="sensitivityUpdateDictionaryPointcut"
+			expression="execution(* org.openyu.cms.sensitivity.service.impl.SensitivityServiceImpl.updateDictionary*(..))" />
+		<aop:advisor id="sensitivityUpdateDictionaryAdvisor"
+			advice-ref="sensitivityUpdateDictionaryAdvice" pointcut-ref="sensitivityUpdateDictionaryPointcut" />
+	</aop:config>
+
+	<!-- delete -->
+	<bean id="sensitivityDeleteDictionaryAdvice"
+		class="org.openyu.cms.sensitivity.service.aop.SensitivityDeleteDictionaryInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="sensitivityDeleteDictionaryPointcut"
+			expression="execution(* org.openyu.cms.sensitivity.service.impl.SensitivityServiceImpl.deleteDictionary*(..))" />
+		<aop:advisor id="sensitivityDeleteDictionaryAdvisor"
+			advice-ref="sensitivityDeleteDictionaryAdvice" pointcut-ref="sensitivityDeleteDictionaryPointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="sensitivityLogDao" class="org.openyu.cms.sensitivity.dao.impl.SensitivityLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="sensitivityLogService"
+		class="org.openyu.cms.sensitivity.service.impl.SensitivityLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="sensitivityLogServiceTxPointcut"
+			expression="bean(sensitivityLogService)" />
+		<aop:advisor id="sensitivityLogServiceTxAdvisor"
+			advice-ref="logTxAdvice" pointcut-ref="sensitivityLogServiceTxPointcut" />
+	</aop:config>
+
+</beans>

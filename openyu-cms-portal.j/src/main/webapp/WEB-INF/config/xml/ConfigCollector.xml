@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configCollector>
+    <id>org.openyu.cms.config.vo.ConfigCollector</id>
+    <defaultConfig>DEFAULT</defaultConfig>
+    <configs>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <sysDeployeePath></sysDeployeePath>
+                <sysPort>80</sysPort>
+                <sysDefaultImg>/csm/back/theme/no_picture.gif</sysDefaultImg>
+                <sysEmailValidate>false</sysEmailValidate>
+                <sysDbFileUri>/dbfile.svl?n=</sysDbFileUri>
+                <sysUploadToDb>false</sysUploadToDb>
+                <downloadTime>0</downloadTime>
+                <loginErrorTimes>3</loginErrorTimes>
+                <loginErrorInterval>30</loginErrorInterval>
+                <emailHost>smtp.gmail.com</emailHost>
+                <emailPort>465</emailPort>
+                <emailUsername>fish20110610@gmail.com</emailUsername>
+                <emailPassword></emailPassword>
+                <emailEncoding>UTF-8</emailEncoding>
+                <emailPersonal>OIT</emailPersonal>
+                <forgotPasswordSubjects>
+                    <entry key="zh_TW"></entry>
+                    <entry key="zh_CN"></entry>
+                    <entry key="en_US"></entry>
+                </forgotPasswordSubjects>
+                <forgotPasswordTexts>
+                    <entry key="zh_TW"></entry>
+                    <entry key="zh_CN"></entry>
+                    <entry key="en_US"></entry>
+                </forgotPasswordTexts>
+                <registerSubjects>
+                    <entry key="zh_TW"></entry>
+                    <entry key="zh_CN"></entry>
+                    <entry key="en_US"></entry>
+                </registerSubjects>
+                <registerTexts>
+                    <entry key="zh_TW"></entry>
+                    <entry key="zh_CN"></entry>
+                    <entry key="en_US"></entry>
+                </registerTexts>
+                <mark>true</mark>
+                <markWidth>120</markWidth>
+                <markHeight>120</markHeight>
+                <markImagePath>/csm/back/theme/watermark.png</markImagePath>
+                <markContent>www.jeecms.com</markContent>
+                <markSize>20</markSize>
+                <markColor>#FF0000</markColor>
+                <markAlpha>50</markAlpha>
+                <markPos>1</markPos>
+                <markOffsetX>0</markOffsetX>
+                <markOffsetY>0</markOffsetY>
+                <member>false</member>
+                <register>false</register>
+                <usernameMinLen>3</usernameMinLen>
+                <passwordMinLen>3</passwordMinLen>
+                <userImgWidth>143</userImgWidth>
+                <userImgHeight>98</userImgHeight>
+                <usernameReserved></usernameReserved>
+                <forgetPasswordSubjects/>
+                <forgetPasswordContexts/>
+            </value>
+        </entry>
+    </configs>
+    <markPosOptions>
+        <names>
+            <entry key="zh_TW">隨機</entry>
+            <entry key="zh_CN">随机</entry>
+            <entry key="en_US">Random</entry>
+        </names>
+        <id>RANDOM</id>
+    </markPosOptions>
+    <markPosOptions>
+        <names>
+            <entry key="zh_TW">左上</entry>
+            <entry key="zh_CN">左上</entry>
+            <entry key="en_US">Left top</entry>
+        </names>
+        <id>LEFT_TOP</id>
+    </markPosOptions>
+    <markPosOptions>
+        <names>
+            <entry key="zh_TW">右上</entry>
+            <entry key="zh_CN">右上</entry>
+            <entry key="en_US">right top</entry>
+        </names>
+        <id>RIGHT_TOP</id>
+    </markPosOptions>
+    <markPosOptions>
+        <names>
+            <entry key="zh_TW">左下</entry>
+            <entry key="zh_CN">左下</entry>
+            <entry key="en_US">Left down</entry>
+        </names>
+        <id>LEFT_DOWN</id>
+    </markPosOptions>
+    <markPosOptions>
+        <names>
+            <entry key="zh_TW">右下</entry>
+            <entry key="zh_CN">右下</entry>
+            <entry key="en_US">right down</entry>
+        </names>
+        <id>RIGHT_DOWN</id>
+    </markPosOptions>
+    <markPosOptions>
+        <names>
+            <entry key="zh_TW">中央</entry>
+            <entry key="zh_CN">中央</entry>
+            <entry key="en_US">Center</entry>
+        </names>
+        <id>CENTER</id>
+    </markPosOptions>
+</configCollector>

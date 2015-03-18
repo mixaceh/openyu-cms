@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="keywordDao" class="org.openyu.cms.keyword.dao.impl.KeywordDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="keywordService" class="org.openyu.cms.keyword.service.impl.KeywordServiceImpl"
+		parent="appServiceSupporter">
+	</bean>
+
+	<!-- txAdvisor -->
+	<aop:config>
+		<aop:pointcut id="keywordServiceTxPointcut" expression="bean(keywordService)" />
+		<aop:advisor id="keywordServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="keywordServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertDictionary -->
+	<bean id="keywordInsertDictionaryAdvice"
+		class="org.openyu.cms.keyword.service.aop.KeywordInsertDictionaryInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="keywordInsertDictionaryPointcut"
+			expression="execution(* org.openyu.cms.keyword.service.impl.KeywordServiceImpl.insertDictionary*(..))" />
+		<aop:advisor id="keywordInsertDictionaryAdvisor"
+			advice-ref="keywordInsertDictionaryAdvice" pointcut-ref="keywordInsertDictionaryPointcut" />
+	</aop:config>
+
+	<!-- updateDictionary -->
+	<bean id="keywordUpdateDictionaryAdvice"
+		class="org.openyu.cms.keyword.service.aop.KeywordUpdateDictionaryInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="keywordUpdateDictionaryPointcut"
+			expression="execution(* org.openyu.cms.keyword.service.impl.KeywordServiceImpl.updateDictionary*(..))" />
+		<aop:advisor id="keywordUpdateDictionaryAdvisor"
+			advice-ref="keywordUpdateDictionaryAdvice" pointcut-ref="keywordUpdateDictionaryPointcut" />
+	</aop:config>
+
+	<!-- deleteDictionary -->
+	<bean id="keywordDeleteDictionaryAdvice"
+		class="org.openyu.cms.keyword.service.aop.KeywordDeleteDictionaryInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="keywordDeleteDictionaryPointcut"
+			expression="execution(* org.openyu.cms.keyword.service.impl.KeywordServiceImpl.deleteDictionary*(..))" />
+		<aop:advisor id="keywordDeleteDictionaryAdvisor"
+			advice-ref="keywordDeleteDictionaryAdvice" pointcut-ref="keywordDeleteDictionaryPointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="keywordLogDao" class="org.openyu.cms.keyword.dao.impl.KeywordLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="keywordLogService" class="org.openyu.cms.keyword.service.impl.KeywordLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="keywordLogServiceTxPointcut"
+			expression="bean(keywordLogService)" />
+		<aop:advisor id="keywordLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="keywordLogServiceTxPointcut" />
+	</aop:config>
+
+</beans>

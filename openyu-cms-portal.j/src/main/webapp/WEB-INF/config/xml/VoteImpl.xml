@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<vote>
+    <id>TEST_VOTE</id>
+    <names>
+        <entry key="zh_TW">測試投票</entry>
+        <entry key="zh_CN">测试模组</entry>
+        <entry key="en_US">Test Group</entry>
+    </names>
+    <descriptions>
+        <entry key="zh_TW">測試描述</entry>
+        <entry key="zh_CN">測試描述</entry>
+        <entry key="en_US">Description</entry>
+    </descriptions>
+    <startDate>2014-11-20T23:22:41.723+08:00</startDate>
+    <endDate>2014-11-20T20:39:10.017+08:00</endDate>
+    <repeateHour>21</repeateHour>
+    <totalCount>91</totalCount>
+    <multiSelect>0</multiSelect>
+    <restrictMember>false</restrictMember>
+    <restrictIp>false</restrictIp>
+    <restrictCookie>true</restrictCookie>
+    <valid>true</valid>
+    <defaultz>false</defaultz>
+    <voteItems>
+        <entry key="ZsVnl">
+            <value>
+                <id>
+                    <id>1</id>
+                    <only>false</only>
+                </id>
+                <names>
+                    <entry key="zh_TW">測試標題1</entry>
+                    <entry key="zh_CN">測試标题1</entry>
+                    <entry key="en_US">Test Title 1</entry>
+                </names>
+                <voteCount>14</voteCount>
+                <sort>1</sort>
+            </value>
+        </entry>
+        <entry key="XDeSJ">
+            <value>
+                <id>
+                    <id>2</id>
+                    <only>false</only>
+                </id>
+                <names>
+                    <entry key="zh_TW">測試標題2</entry>
+                    <entry key="zh_CN">測試标题2</entry>
+                    <entry key="en_US">Test Title 2</entry>
+                </names>
+                <voteCount>52</voteCount>
+                <sort>9</sort>
+            </value>
+        </entry>
+        <entry key="hIOwT">
+            <value>
+                <id>
+                    <id>3</id>
+                    <only>false</only>
+                </id>
+                <names>
+                    <entry key="zh_TW">測試標題3</entry>
+                    <entry key="zh_CN">測試标题3</entry>
+                    <entry key="en_US">Test Title 3</entry>
+                </names>
+                <voteCount>5</voteCount>
+                <sort>3</sort>
+            </value>
+        </entry>
+    </voteItems>
+</vote>

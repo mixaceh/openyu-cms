@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+             http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- configHelper 
+	<bean id="configHelper" class="org.openyu.commons.util.ConfigHelper">
+		<property name="configLocation">
+			<value>/WEB-INF/config/etc/config.xml</value>
+		</property>
+		-->
+		<!--  
+		<property name="log4jConfigLocation">
+			<value>classpath:log4j.properties</value>
+		</property>
+		-->
+	<!-- 
+		<property name="jsonDirLocation">
+			<value>/WEB-INF/config/json</value>
+		</property>
+		<property name="keyDirLocation">
+			<value>/WEB-INF/config/key</value>
+		</property>
+		<property name="serDirLocation">
+			<value>/WEB-INF/config/ser</value>
+		</property>
+		<property name="xmlDirLocation">
+			<value>/WEB-INF/config/xml</value>
+		</property>
+		<property name="excelDirLocation">
+			<value>/WEB-INF/config/excel</value>
+		</property>
+		<property name="outputDirLocation">
+			<value>/custom/output</value>
+		</property>
+		<property name="downloadDirLocation">
+			<value>/custom/download</value>
+		</property>
+		<property name="uploadDirLocation">
+			<value>/custom/upload</value>
+		</property>
+	</bean>
+	-->
+
+	<bean id="propertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/config/etc/database.properties</value>
+				<value>/WEB-INF/config/etc/database-log.properties
+				</value>
+				
+				<!-- hbase zookeeper -->
+				<value>/WEB-INF/config/etc/hbase-zookeeper.properties
+				</value>
+				
+				<!-- hbase thrift -->
+				<value>/WEB-INF/config/etc/hbase-thrift.properties
+				</value>
+
+				<!-- cassandra thrift -->
+				<value>/WEB-INF/config/etc/cassandra-thrift.properties
+				</value>
+
+				<!-- commons net ftp -->
+				<value>/WEB-INF/config/etc/commons-net-ftp.properties
+				</value>
+
+				<!--  rabbit mq -->
+				<value>/WEB-INF/config/etc/rabbitmq.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="servicePropertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="2" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/config/etc/authKeyService.properties
+				</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- must be beanName.property=value   -->
+	<bean id="propertyOverrideConfigurer"
+		class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+		<property name="locations">
+			<list>
+			</list>
+		</property>
+	</bean>  	
+
+    <!--  
+	<bean id="cacheProvider" class="org.openyu.commons.hibernate.EhCacheProvider">
+		<property name="cacheManagerName">
+			<value>cacheProvider</value>
+		</property>
+		<property name="configLocation">
+			<value>classpath:ehcache.xml</value>
+		</property>
+		<property name="diskStoreLocation">
+			<value>file:ehcache</value>
+		</property>
+	</bean>
+	-->
+
+	<!--  
+	<bean id="logCacheProvider" class="org.openyu.commons.hibernate.EhCacheProvider">
+		<property name="cacheManagerName">
+			<value>logCacheProvider</value>
+		</property>
+		<property name="configLocation">
+			<value>classpath:ehcache-log.xml</value>
+		</property>
+		<property name="diskStoreLocation">
+			<value>file:ehcache-log</value>
+		</property>
+	</bean>
+	-->
+
+	<!-- velocity -->
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="resourceLoaderPath" value="/WEB-INF/custom/template/vm" />
+		<property name="configLocation"
+			value="/WEB-INF/config/etc/velocity.properties" />
+	</bean>
+
+	<!-- freeMarker -->
+	<bean id="freeMarkerConfiguration"
+		class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+		<property name="templateLoaderPath" value="/WEB-INF/custom/template/ftl" />
+		<property name="configLocation"
+			value="/WEB-INF/config/etc/freemarker.properties" />
+	</bean>
+
+	<!-- annotation -->
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+</beans>

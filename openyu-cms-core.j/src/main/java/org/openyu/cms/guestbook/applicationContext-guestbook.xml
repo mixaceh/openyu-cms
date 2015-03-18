@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="guestbookDao" class="org.openyu.cms.guestbook.dao.impl.GuestbookDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="guestbookService" class="org.openyu.cms.guestbook.service.impl.GuestbookServiceImpl"
+		parent="appServiceSupporter">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="guestbookServiceTxPointcut" expression="bean(guestbookService)" />
+		<aop:advisor id="guestbookServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="guestbookServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertGuestbook -->
+	<bean id="guestbookInsertGuestbookAdvice"
+		class="org.openyu.cms.guestbook.service.aop.GuestbookInsertGuestbookInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="guestbookInsertGuestbookPointcut"
+			expression="execution(* org.openyu.cms.guestbook.service.impl.GuestbookServiceImpl.insertGuestbook*(..))" />
+		<aop:advisor id="guestbookInsertGuestbookAdvisor" advice-ref="guestbookInsertGuestbookAdvice"
+			pointcut-ref="guestbookInsertGuestbookPointcut" />
+	</aop:config>
+
+	<!-- updateGuestbook -->
+	<bean id="guestbookUpdateGuestbookAdvice"
+		class="org.openyu.cms.guestbook.service.aop.GuestbookUpdateGuestbookInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="guestbookUpdateGuestbookPointcut"
+			expression="execution(* org.openyu.cms.guestbook.service.impl.GuestbookServiceImpl.updateGuestbook*(..))" />
+		<aop:advisor id="guestbookUpdateGuestbookAdvisor" advice-ref="guestbookUpdateGuestbookAdvice"
+			pointcut-ref="guestbookUpdateGuestbookPointcut" />
+	</aop:config>
+
+	<!-- deleteGuestbook -->
+	<bean id="guestbookDeleteGuestbookAdvice"
+		class="org.openyu.cms.guestbook.service.aop.GuestbookDeleteGuestbookInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="guestbookDeleteGuestbookPointcut"
+			expression="execution(* org.openyu.cms.guestbook.service.impl.GuestbookServiceImpl.deleteGuestbook*(..))" />
+		<aop:advisor id="guestbookDeleteGuestbookAdvisor" advice-ref="guestbookDeleteGuestbookAdvice"
+			pointcut-ref="guestbookDeleteGuestbookPointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="guestbookLogDao" class="org.openyu.cms.guestbook.dao.impl.GuestbookLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="guestbookLogService" class="org.openyu.cms.guestbook.service.impl.GuestbookLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="guestbookLogServiceTxPointcut" expression="bean(guestbookLogService)" />
+		<aop:advisor id="guestbookLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="guestbookLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_guestbook_list"
+		class="org.openyu.cms.guestbook.web.freeMarker.GuestbookListDirective" />
+
+	<bean id="cms_guestbook" class="org.openyu.cms.guestbook.web.freeMarker.GuestbookDirective" />
+
+</beans>

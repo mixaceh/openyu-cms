@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<friendType>
+    <id>TEST_FRIEND_TYPE</id>
+    <names>
+        <entry key="zh_TW">測試友情類別</entry>
+        <entry key="zh_CN">测试友情类别</entry>
+        <entry key="en_US">Test FriendType</entry>
+    </names>
+    <sort>53</sort>
+    <site>
+        <seq>1</seq>
+        <id>TEST_SITE</id>
+    </site>
+</friendType>

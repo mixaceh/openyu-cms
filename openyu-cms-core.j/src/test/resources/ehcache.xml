@@ -1,0 +1,158 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+	updateCheck="false" name="cacheManager">
+
+	<!-- Sets the path to the directory where cache .data files are created. 
+		If the path is a Java System Property it is replaced by its value in the 
+		running VM. The following properties are translated: user.home - User's home 
+		directory user.dir - User's current working directory java.io.tmpdir - Default 
+		temp file path -->
+	<!-- <diskStore path="java.io.tmpdir" /> <diskStore path="user.dir/ehcache"/> -->
+	<diskStore path="ehcache" />
+
+	<!--Default Cache configuration. These will applied to caches programmatically 
+		created through the CacheManager. The following attributes are required for 
+		defaultCache: maxInMemory - Sets the maximum number of objects that will 
+		be created in memory eternal - Sets whether elements are eternal. If eternal, 
+		timeouts are ignored and the element is never expired. timeToIdleSeconds 
+		- Sets the time to idle for an element before it expires. Is only used if 
+		the element is not eternal. Idle time is now - last accessed time timeToLiveSeconds 
+		- Sets the time to live for an element before it expires. Is only used if 
+		the element is not eternal. TTL is now - creation time overflowToDisk - Sets 
+		whether elements can overflow to disk when the in-memory cache has reached 
+		the maxInMemory limit. -->
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true" />
+
+	<!--Predefined caches. Add your cache configuration settings here. If you 
+		do not have a configuration for your cache a WARNING will be issued when 
+		the CacheManager starts The following attributes are required for defaultCache: 
+		name - Sets the name of the cache. This is used to identify the cache. It 
+		must be unique. maxInMemory - Sets the maximum number of objects that will 
+		be created in memory eternal - Sets whether elements are eternal. If eternal, 
+		timeouts are ignored and the element is never expired. timeToIdleSeconds 
+		- Sets the time to idle for an element before it expires. Is only used if 
+		the element is not eternal. Idle time is now - last accessed time timeToLiveSeconds 
+		- Sets the time to live for an element before it expires. Is only used if 
+		the element is not eternal. TTL is now - creation time overflowToDisk - Sets 
+		whether elements can overflow to disk when the in-memory cache has reached 
+		the maxInMemory limit. -->
+
+
+	<!-- Place configuration for your caches following -->
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+		maxElementsInMemory="5000" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="3600" overflowToDisk="true" />
+
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="300"
+		timeToLiveSeconds="3600" overflowToDisk="true" />
+
+	<!-- cms -->
+	<!-- catalog -->
+	<cache name="org.openyu.cms.catalog.po.impl.CatalogPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- module -->
+	<cache name="org.openyu.cms.module.po.impl.ModulePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- group -->
+	<cache name="org.openyu.cms.group.po.impl.GroupPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- role -->
+	<cache name="org.openyu.cms.role.po.impl.RolePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- user -->
+	<cache name="org.openyu.cms.user.po.impl.UserPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- sensitivity -->
+	<cache name="org.openyu.cms.sensitivity.po.impl.SensitivityPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- keyword -->
+	<cache name="org.openyu.cms.keyword.po.impl.KeywordPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- config -->
+	<cache name="org.openyu.cms.config.po.impl.ConfigPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- ftp -->
+	<cache name="org.openyu.cms.ftp.po.impl.FtpPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- site -->
+	<cache name="org.openyu.cms.site.po.impl.SitePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- contextType -->
+	<cache name="org.openyu.cms.contextType.po.impl.ContextTypePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- friendType -->
+	<cache name="org.openyu.cms.friendType.po.impl.FriendTypePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- friend -->
+	<cache name="org.openyu.cms.friend.po.impl.FriendPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- adSpace -->
+	<cache name="org.openyu.cms.adSpace.po.impl.AdSpacePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- ad -->
+	<cache name="org.openyu.cms.ad.po.impl.AdPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- guestbook -->
+	<cache name="org.openyu.cms.guestbook.po.impl.GuestbookPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- guestbookType -->
+	<cache name="org.openyu.cms.guestbookType.po.impl.GuestbookTypePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- tag -->
+	<cache name="org.openyu.cms.tag.po.impl.TagPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- topic -->
+	<cache name="org.openyu.cms.topic.po.impl.TopicPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+	<!-- vote -->
+	<cache name="org.openyu.cms.vote.po.impl.VotePoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+		
+	<!-- backup -->
+	<cache name="org.openyu.cms.backup.po.impl.BackupPoImpl"
+		maxElementsInMemory="10000" eternal="false" timeToIdleSeconds="180"
+		timeToLiveSeconds="600" overflowToDisk="true" diskPersistent="false" />
+
+</ehcache>
+

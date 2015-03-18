@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- service -->
+	<bean id="resourceService" class="org.openyu.cms.resource.service.impl.ResourceServiceImpl"
+		parent="archiveServiceSupporter">
+	</bean>
+
+	<!-- createDir -->
+	<bean id="resourceCreateDirAdvice"
+		class="org.openyu.cms.resource.service.aop.ResourceCreateDirInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="resourceCreateDirPointcut"
+			expression="execution(public * org.openyu.cms.resource.service.impl.ResourceServiceImpl.createDir*(..))" />
+		<aop:advisor id="resourceCreateDirAdvisor" advice-ref="resourceCreateDirAdvice"
+			pointcut-ref="resourceCreateDirPointcut" />
+	</aop:config>
+
+	<!-- createFile -->
+	<bean id="resourceCreateFileAdvice"
+		class="org.openyu.cms.resource.service.aop.ResourceCreateFileInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="resourceCreateFilePointcut"
+			expression="execution(public * org.openyu.cms.resource.service.impl.ResourceServiceImpl.createFile*(..))" />
+		<aop:advisor id="resourceCreateFileAdvisor" advice-ref="resourceCreateFileAdvice"
+			pointcut-ref="resourceCreateFilePointcut" />
+	</aop:config>
+
+	<!-- deleteFile -->
+	<bean id="resourceDeleteFileAdvice"
+		class="org.openyu.cms.resource.service.aop.ResourceDeleteFileInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="resourceDeleteFilePointcut"
+			expression="execution(public * org.openyu.cms.resource.service.impl.ResourceServiceImpl.deleteFile*(..))" />
+		<aop:advisor id="resourceDeleteFileAdvisor" advice-ref="resourceDeleteFileAdvice"
+			pointcut-ref="resourceDeleteFilePointcut" />
+	</aop:config>
+
+	<!-- renameFile -->
+	<bean id="resourceRenameFileAdvice"
+		class="org.openyu.cms.resource.service.aop.ResourceRenameFileInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="resourceRenameFilePointcut"
+			expression="execution(public * org.openyu.cms.resource.service.impl.ResourceServiceImpl.renameFile*(..))" />
+		<aop:advisor id="resourceRenameFileAdvisor" advice-ref="resourceRenameFileAdvice"
+			pointcut-ref="resourceRenameFilePointcut" />
+	</aop:config>
+
+	<!-- saveFile -->
+	<bean id="resourceSaveFileAdvice"
+		class="org.openyu.cms.resource.service.aop.ResourceSaveFileInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="resourceSaveFilePointcut"
+			expression="execution(public * org.openyu.cms.resource.service.impl.ResourceServiceImpl.saveFile*(..))" />
+		<aop:advisor id="resourceSaveFileAdvisor" advice-ref="resourceSaveFileAdvice"
+			pointcut-ref="resourceSaveFilePointcut" />
+	</aop:config>
+
+	<!-- uploadFile -->
+	<bean id="resourceUploadFileAdvice"
+		class="org.openyu.cms.resource.service.aop.ResourceUploadFileInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="resourceUploadFilePointcut"
+			expression="execution(public * org.openyu.cms.resource.service.impl.ResourceServiceImpl.uploadFile*(..))" />
+		<aop:advisor id="resourceUploadFileAdvisor" advice-ref="resourceUploadFileAdvice"
+			pointcut-ref="resourceUploadFilePointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="resourceLogDao" class="org.openyu.cms.resource.dao.impl.ResourceLogDaoImpl"
+		parent="appLogDaoSupporter">
+	</bean>
+
+	<!-- logService -->
+	<bean id="resourceLogService"
+		class="org.openyu.cms.resource.service.impl.ResourceLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="resourceLogServiceTxPointcut"
+			expression="bean(resourceLogService)" />
+		<aop:advisor id="resourceLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="resourceLogServiceTxPointcut" />
+	</aop:config>
+
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<keyword>
+    <id>TEST_KEYWORD</id>
+    <dictionarys>
+        <entry key="7sBOZ">
+            <value>
+                <key>7sBOZ</key>
+                <value>zHFC7</value>
+                <valid>true</valid>
+            </value>
+        </entry>
+    </dictionarys>
+    <locale>zh_TW</locale>
+</keyword>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="tagDao" class="org.openyu.cms.tag.dao.impl.TagDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="tagService" class="org.openyu.cms.tag.service.impl.TagServiceImpl"
+		parent="appServiceSupporter">
+	</bean>
+
+	<!-- adapter -->
+	<bean id="tagBeanAdapter" class="org.openyu.cms.tag.service.adapter.TagBeanAdapter"
+		parent="appBeanAdapter" init-method="initialize">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="tagServiceTxPointcut" expression="bean(tagService)" />
+		<aop:advisor id="tagServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="tagServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertTag -->
+	<bean id="tagInsertTagAdvice"
+		class="org.openyu.cms.tag.service.aop.TagInsertTagInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="tagInsertTagPointcut"
+			expression="execution(* org.openyu.cms.tag.service.impl.TagServiceImpl.insertTag*(..))" />
+		<aop:advisor id="tagInsertTagAdvisor" advice-ref="tagInsertTagAdvice"
+			pointcut-ref="tagInsertTagPointcut" />
+	</aop:config>
+
+	<!-- updateTag -->
+	<bean id="tagUpdateTagAdvice"
+		class="org.openyu.cms.tag.service.aop.TagUpdateTagInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="tagUpdateTagPointcut"
+			expression="execution(* org.openyu.cms.tag.service.impl.TagServiceImpl.updateTag*(..))" />
+		<aop:advisor id="tagUpdateTagAdvisor" advice-ref="tagUpdateTagAdvice"
+			pointcut-ref="tagUpdateTagPointcut" />
+	</aop:config>
+
+	<!-- deleteTag -->
+	<bean id="tagDeleteTagAdvice"
+		class="org.openyu.cms.tag.service.aop.TagDeleteTagInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="tagDeleteTagPointcut"
+			expression="execution(* org.openyu.cms.tag.service.impl.TagServiceImpl.deleteTag*(..))" />
+		<aop:advisor id="tagDeleteTagAdvisor" advice-ref="tagDeleteTagAdvice"
+			pointcut-ref="tagDeleteTagPointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="tagLogDao" class="org.openyu.cms.tag.dao.impl.TagLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="tagLogService" class="org.openyu.cms.tag.service.impl.TagLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="tagLogServiceTxPointcut" expression="bean(tagLogService)" />
+		<aop:advisor id="tagLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="tagLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_tag_list" class="org.openyu.cms.tag.web.freeMarker.TagListDirective" />
+
+	<bean id="cms_tag" class="org.openyu.cms.tag.web.freeMarker.TagDirective" />
+</beans>

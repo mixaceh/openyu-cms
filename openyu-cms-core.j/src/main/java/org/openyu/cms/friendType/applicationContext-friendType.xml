@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="friendTypeDao" class="org.openyu.cms.friendType.dao.impl.FriendTypeDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="friendTypeService"
+		class="org.openyu.cms.friendType.service.impl.FriendTypeServiceImpl"
+		parent="appServiceSupporter" init-method="initialize">
+	</bean>
+
+	<!-- adapter -->
+	<bean id="friendTypeBeanAdapter"
+		class="org.openyu.cms.friendType.service.adapter.FriendTypeBeanAdapter"
+		parent="appBeanAdapter" init-method="initialize">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="friendTypeServiceTxPointcut"
+			expression="bean(friendTypeService)" />
+		<aop:advisor id="friendTypeServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="friendTypeServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertFriendType -->
+	<bean id="friendTypeInsertFriendTypeAdvice"
+		class="org.openyu.cms.friendType.service.aop.FriendTypeInsertFriendTypeInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="friendTypeInsertFriendTypePointcut"
+			expression="execution(* org.openyu.cms.friendType.service.impl.FriendTypeServiceImpl.insertFriendType*(..))" />
+		<aop:advisor id="friendTypeInsertFriendTypeAdvisor" advice-ref="friendTypeInsertFriendTypeAdvice"
+			pointcut-ref="friendTypeInsertFriendTypePointcut" />
+	</aop:config>
+
+	<!-- updateFriendType -->
+	<bean id="friendTypeUpdateFriendTypeAdvice"
+		class="org.openyu.cms.friendType.service.aop.FriendTypeUpdateFriendTypeInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="friendTypeUpdateFriendTypePointcut"
+			expression="execution(* org.openyu.cms.friendType.service.impl.FriendTypeServiceImpl.updateFriendType*(..))" />
+		<aop:advisor id="friendTypeUpdateFriendTypeAdvisor" advice-ref="friendTypeUpdateFriendTypeAdvice"
+			pointcut-ref="friendTypeUpdateFriendTypePointcut" />
+	</aop:config>
+
+	<!-- deleteFriendType -->
+	<bean id="friendTypeDeleteFriendTypeAdvice"
+		class="org.openyu.cms.friendType.service.aop.FriendTypeDeleteFriendTypeInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="friendTypeDeleteFriendTypePointcut"
+			expression="execution(* org.openyu.cms.friendType.service.impl.FriendTypeServiceImpl.deleteFriendType*(..))" />
+		<aop:advisor id="friendTypeDeleteFriendTypeAdvisor" advice-ref="friendTypeDeleteFriendTypeAdvice"
+			pointcut-ref="friendTypeDeleteFriendTypePointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="friendTypeLogDao" class="org.openyu.cms.friendType.dao.impl.FriendTypeLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="friendTypeLogService" class="org.openyu.cms.friendType.service.impl.FriendTypeLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="friendTypeLogServiceTxPointcut" expression="bean(friendTypeLogService)" />
+		<aop:advisor id="friendTypeLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="friendTypeLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_friend_type_list"
+		class="org.openyu.cms.friendType.web.freeMarker.FriendTypeListDirective" />
+
+	<bean id="cms_friend_type"
+		class="org.openyu.cms.friendType.web.freeMarker.FriendTypeDirective" />
+</beans>

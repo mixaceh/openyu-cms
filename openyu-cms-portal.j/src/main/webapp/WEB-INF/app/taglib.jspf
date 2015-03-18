@@ -1,0 +1,6 @@
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<%@ taglib prefix="sx" uri="/struts-dojo-tags"%>
+<%@ taglib prefix="decorator"
+	uri="http://www.opensymphony.com/sitemesh/decorator"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>

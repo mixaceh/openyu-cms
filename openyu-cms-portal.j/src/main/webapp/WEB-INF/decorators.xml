@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<decorators defaultdir="/WEB-INF">
+	<!-- <excludes> <pattern></pattern> </excludes> -->
+
+	<!-- back -->
+	<decorator name="doctors_office" page="back/decorators/doctors_office/index.ftl">
+		<pattern>/back/service/*.act*</pattern>
+	</decorator>
+
+	<!-- front -->
+	<decorator name="NewsPortal" page="front/decorators/NewsPortal/index.ftl">
+		<pattern>/front/service/*.act*</pattern>
+	</decorator>
+	
+	<!--  
+	<decorator name="gila" page="back/decorators/gila/index.jsp">
+		<pattern>/back/service/*.act*</pattern>
+	</decorator>
+	-->		
+</decorators>

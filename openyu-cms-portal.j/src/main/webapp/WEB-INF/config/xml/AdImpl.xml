@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ad>
+    <id>TEST_AD</id>
+    <names>
+        <entry key="zh_TW">測試廣告</entry>
+        <entry key="zh_CN">测试广告</entry>
+        <entry key="en_US">Test Ad</entry>
+    </names>
+    <valid>true</valid>
+    <adType>PICTURE</adType>
+    <url>peknDf8</url>
+    <target>PKpaud1C1</target>
+    <imgWidth>0</imgWidth>
+    <imgHeight>0</imgHeight>
+    <click>37</click>
+    <display>64</display>
+    <weight>93</weight>
+    <begDate>2014/11/20 00:02:50.236</begDate>
+    <endDate>2014/11/19 17:55:32.510</endDate>
+    <site>
+        <seq>1</seq>
+        <id>TEST_SITE</id>
+    </site>
+    <adSpace>
+        <seq>1</seq>
+        <id>TEST_AD_SPACE</id>
+    </adSpace>
+</ad>

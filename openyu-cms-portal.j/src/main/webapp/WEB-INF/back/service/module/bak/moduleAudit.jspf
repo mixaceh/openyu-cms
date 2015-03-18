@@ -1,0 +1,21 @@
+<s:if test="%{module.audit!=null}">
+	<div class="story">
+		<s:include value="/WEB-INF/app/auditView.jsp">
+			<s:param name="version">
+				<s:property value="module.version" />
+			</s:param>
+			<s:param name="createDate">
+				<s:property value="module.audit.createDate" />
+			</s:param>
+			<s:param name="createUser">
+				<s:property value="module.audit.createUser" />
+			</s:param>
+			<s:param name="modifiedDate">
+				<s:property value="module.audit.modifiedDate" />
+			</s:param>
+			<s:param name="modifiedUser">
+				<s:property value="module.audit.modifiedUser" />
+			</s:param>
+		</s:include>
+	</div>
+</s:if>

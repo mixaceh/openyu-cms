@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module>
+    <id>TEST_MODULE</id>
+    <names>
+        <entry key="zh_TW">測試模組</entry>
+        <entry key="zh_CN">测试模组</entry>
+        <entry key="en_US">Test Group</entry>
+    </names>
+    <valid>false</valid>
+    <path>Dnajijb</path>
+    <catalogPrefix>9jE</catalogPrefix>
+    <contextPrefix>0vCkzg7no</contextPrefix>
+    <catalogImgWidth>36</catalogImgWidth>
+    <catalogImgHeight>4</catalogImgHeight>
+    <contextImgWidth>12</contextImgWidth>
+    <contextImgHeight>5</contextImgHeight>
+    <sort>27</sort>
+    <context>true</context>
+    <defaultz>false</defaultz>
+    <catalogItems>
+        <entry key="path">
+            <value>
+                <id>
+                    <id>path</id>
+                    <only>false</only>
+                </id>
+                <names/>
+                <sort>0</sort>
+                <columnType>STRING</columnType>
+                <single>false</single>
+                <custom>false</custom>
+                <display>false</display>
+            </value>
+        </entry>
+        <entry key="title">
+            <value>
+                <id>
+                    <id>title</id>
+                    <only>false</only>
+                </id>
+                <names/>
+                <sort>0</sort>
+                <columnType>STRING</columnType>
+                <single>false</single>
+                <custom>false</custom>
+                <display>false</display>
+            </value>
+        </entry>
+        <entry key="keywords">
+            <value>
+                <id>
+                    <id>keywords</id>
+                    <only>false</only>
+                </id>
+                <names/>
+                <sort>0</sort>
+                <columnType>TEXT_AREA</columnType>
+                <single>false</single>
+                <custom>false</custom>
+                <display>false</display>
+            </value>
+        </entry>
+    </catalogItems>
+    <contextItems>
+        <entry key="path">
+            <value>
+                <id>
+                    <id>path</id>
+                    <only>false</only>
+                </id>
+                <names/>
+                <sort>0</sort>
+                <columnType>STRING</columnType>
+                <single>false</single>
+                <custom>false</custom>
+                <display>false</display>
+            </value>
+        </entry>
+        <entry key="title">
+            <value>
+                <id>
+                    <id>title</id>
+                    <only>false</only>
+                </id>
+                <names/>
+                <sort>0</sort>
+                <columnType>STRING</columnType>
+                <single>false</single>
+                <custom>false</custom>
+                <display>false</display>
+            </value>
+        </entry>
+        <entry key="keywords">
+            <value>
+                <id>
+                    <id>keywords</id>
+                    <only>false</only>
+                </id>
+                <names/>
+                <sort>0</sort>
+                <columnType>TEXT_AREA</columnType>
+                <single>false</single>
+                <custom>false</custom>
+                <display>false</display>
+            </value>
+        </entry>
+    </contextItems>
+</module>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contextTypeCollector>
+    <id>org.openyu.cms.contextType.vo.ContextTypeCollector</id>
+    <inquiry>
+        <sorts>
+            <names>
+                <entry key="zh_TW">ID</entry>
+                <entry key="zh_CN">ID</entry>
+                <entry key="en_US">ID</entry>
+            </names>
+            <id>id</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">序號</entry>
+                <entry key="zh_CN">序号</entry>
+                <entry key="en_US">Sequence</entry>
+            </names>
+            <id>seq</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">名稱</entry>
+                <entry key="zh_CN">名称</entry>
+                <entry key="en_US">Name</entry>
+            </names>
+            <id>names</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">啟用</entry>
+                <entry key="zh_CN">启用</entry>
+                <entry key="en_US">Valid</entry>
+            </names>
+            <id>valid</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <export>false</export>
+    </inquiry>
+    <defaultContextType>DEFAULT</defaultContextType>
+    <contextTypes>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <names/>
+                <valid>true</valid>
+                <imgWidth>140</imgWidth>
+                <imgHeight>140</imgHeight>
+                <image>false</image>
+            </value>
+        </entry>
+    </contextTypes>
+</contextTypeCollector>

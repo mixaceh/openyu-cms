@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- app -->
+	<import resource="classpath:org/openyu/cms/app/applicationContext-app.xml" />
+
+	<!-- core -->
+	<import resource="classpath:org/openyu/cms/core/applicationContext-core.xml" />
+
+	<!-- catalog -->
+	<import resource="classpath:org/openyu/cms/catalog/applicationContext-catalog.xml" />
+
+	<!-- module -->
+	<import resource="classpath:org/openyu/cms/module/applicationContext-module.xml" />
+
+	<!-- group -->
+	<import resource="classpath:org/openyu/cms/group/applicationContext-group.xml" />
+
+	<!-- role -->
+	<import resource="classpath:org/openyu/cms/role/applicationContext-role.xml" />
+
+	<!-- user -->
+	<import resource="classpath:org/openyu/cms/user/applicationContext-user.xml" />
+
+	<!-- sensitivity -->
+	<import
+		resource="classpath:org/openyu/cms/sensitivity/applicationContext-sensitivity.xml" />
+
+	<!-- keyword -->
+	<import resource="classpath:org/openyu/cms/keyword/applicationContext-keyword.xml" />
+
+	<!-- config -->
+	<import resource="classpath:org/openyu/cms/config/applicationContext-config.xml" />
+
+	<!-- ftp -->
+	<import resource="classpath:org/openyu/cms/ftp/applicationContext-ftp.xml" />
+
+	<!-- site -->
+	<import resource="classpath:org/openyu/cms/site/applicationContext-site.xml" />
+
+	<!-- contextType -->
+	<import
+		resource="classpath:org/openyu/cms/contextType/applicationContext-contextType.xml" />
+
+	<!-- friendType -->
+	<import
+		resource="classpath:org/openyu/cms/friendType/applicationContext-friendType.xml" />
+
+	<!-- friend -->
+	<import resource="classpath:org/openyu/cms/friend/applicationContext-friend.xml" />
+
+	<!-- adSpace -->
+	<import resource="classpath:org/openyu/cms/adSpace/applicationContext-adSpace.xml" />
+
+	<!-- ad -->
+	<import resource="classpath:org/openyu/cms/ad/applicationContext-ad.xml" />
+
+	<!-- guestbook -->
+	<import
+		resource="classpath:org/openyu/cms/guestbook/applicationContext-guestbook.xml" />
+
+	<!-- guestbookType -->
+	<import
+		resource="classpath:org/openyu/cms/guestbookType/applicationContext-guestbookType.xml" />
+
+	<!-- tag -->
+	<import resource="classpath:org/openyu/cms/tag/applicationContext-tag.xml" />
+
+	<!-- topic -->
+	<import resource="classpath:org/openyu/cms/topic/applicationContext-topic.xml" />
+
+	<!-- archive use by resource,template -->
+	<import resource="classpath:org/openyu/cms/archive/applicationContext-archive.xml" />
+
+	<!-- resource -->
+	<import
+		resource="classpath:org/openyu/cms/resource/applicationContext-resource.xml" />
+
+	<!-- template -->
+	<import
+		resource="classpath:org/openyu/cms/template/applicationContext-template.xml" />
+
+	<!-- vote -->
+	<import resource="classpath:org/openyu/cms/vote/applicationContext-vote.xml" />
+
+	<!-- backup -->
+	<import resource="classpath:org/openyu/cms/backup/applicationContext-backup.xml" />
+
+</beans>

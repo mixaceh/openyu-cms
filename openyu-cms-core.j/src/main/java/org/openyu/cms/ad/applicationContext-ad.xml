@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="adDao" class="org.openyu.cms.ad.dao.impl.AdDaoImpl" parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="adService" class="org.openyu.cms.ad.service.impl.AdServiceImpl"
+		parent="appServiceSupporter">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="adServiceTxPointcut" expression="bean(adService)" />
+		<aop:advisor id="adServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="adServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertAd -->
+	<bean id="adInsertAdAdvice"
+		class="org.openyu.cms.ad.service.aop.AdInsertAdInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="adInsertAdPointcut"
+			expression="execution(* org.openyu.cms.ad.service.impl.AdServiceImpl.insertAd*(..))" />
+		<aop:advisor id="adInsertAdAdvisor" advice-ref="adInsertAdAdvice"
+			pointcut-ref="adInsertAdPointcut" />
+	</aop:config>
+
+	<!-- updateAd -->
+	<bean id="adUpdateAdAdvice"
+		class="org.openyu.cms.ad.service.aop.AdUpdateAdInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="adUpdateAdPointcut"
+			expression="execution(* org.openyu.cms.ad.service.impl.AdServiceImpl.updateAd*(..))" />
+		<aop:advisor id="adUpdateAdAdvisor" advice-ref="adUpdateAdAdvice"
+			pointcut-ref="adUpdateAdPointcut" />
+	</aop:config>
+
+	<!-- deleteAd -->
+	<bean id="adDeleteAdAdvice"
+		class="org.openyu.cms.ad.service.aop.AdDeleteAdInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="adDeleteAdPointcut"
+			expression="execution(* org.openyu.cms.ad.service.impl.AdServiceImpl.deleteAd*(..))" />
+		<aop:advisor id="adDeleteAdAdvisor" advice-ref="adDeleteAdAdvice"
+			pointcut-ref="adDeleteAdPointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="adLogDao" class="org.openyu.cms.ad.dao.impl.AdLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="adLogService" class="org.openyu.cms.ad.service.impl.AdLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="adLogServiceTxPointcut" expression="bean(adLogService)" />
+		<aop:advisor id="adLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="adLogServiceTxPointcut" />
+	</aop:config>
+
+	<!-- freeMarker -->
+	<bean id="cms_ad_list" class="org.openyu.cms.ad.web.freeMarker.AdListDirective" />
+
+	<bean id="cms_ad" class="org.openyu.cms.ad.web.freeMarker.AdDirective" />
+
+</beans>

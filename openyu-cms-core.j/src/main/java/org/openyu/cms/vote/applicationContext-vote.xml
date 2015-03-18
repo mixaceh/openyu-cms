@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+             http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+             http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+             http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<!-- dao -->
+	<bean id="voteDao" class="org.openyu.cms.vote.dao.impl.VoteDaoImpl"
+		parent="appDaoSupporter" />
+
+	<!-- service -->
+	<bean id="voteService" class="org.openyu.cms.vote.service.impl.VoteServiceImpl"
+		parent="appServiceSupporter" init-method="initialize">
+	</bean>
+
+	<!-- advisor -->
+	<aop:config>
+		<aop:pointcut id="voteServiceTxPointcut" expression="bean(voteService)" />
+		<aop:advisor id="voteServiceTxAdvisor" advice-ref="txAdvice"
+			pointcut-ref="voteServiceTxPointcut" />
+	</aop:config>
+
+	<!-- insertVote -->
+	<bean id="voteInsertVoteAdvice"
+		class="org.openyu.cms.vote.service.aop.VoteInsertVoteInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="voteInsertVotePointcut"
+			expression="execution(* org.openyu.cms.vote.service.impl.VoteServiceImpl.insertVote*(..))" />
+		<aop:advisor id="voteInsertVoteAdvisor" advice-ref="voteInsertVoteAdvice"
+			pointcut-ref="voteInsertVotePointcut" />
+	</aop:config>
+
+	<!-- updateVote -->
+	<bean id="voteUpdateVoteAdvice"
+		class="org.openyu.cms.vote.service.aop.VoteUpdateVoteInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="voteUpdateVotePointcut"
+			expression="execution(* org.openyu.cms.vote.service.impl.VoteServiceImpl.updateVote*(..))" />
+		<aop:advisor id="voteUpdateVoteAdvisor" advice-ref="voteUpdateVoteAdvice"
+			pointcut-ref="voteUpdateVotePointcut" />
+	</aop:config>
+
+	<!-- deleteVote -->
+	<bean id="voteDeleteVoteAdvice"
+		class="org.openyu.cms.vote.service.aop.VoteDeleteVoteInterceptor"
+		parent="appMethodInterceptorSupporter">
+	</bean>
+	<aop:config>
+		<aop:pointcut id="voteDeleteVotePointcut"
+			expression="execution(* org.openyu.cms.vote.service.impl.VoteServiceImpl.deleteVote*(..))" />
+		<aop:advisor id="voteDeleteVoteAdvisor" advice-ref="voteDeleteVoteAdvice"
+			pointcut-ref="voteDeleteVotePointcut" />
+	</aop:config>
+
+	<!-- logDao -->
+	<bean id="voteLogDao" class="org.openyu.cms.vote.dao.impl.VoteLogDaoImpl"
+		parent="appLogDaoSupporter" />
+
+	<!-- logService -->
+	<bean id="voteLogService" class="org.openyu.cms.vote.service.impl.VoteLogServiceImpl"
+		parent="appLogServiceSupporter">
+	</bean>
+
+	<!-- logTxAdvisor -->
+	<aop:config>
+		<aop:pointcut id="voteLogServiceTxPointcut" expression="bean(voteLogService)" />
+		<aop:advisor id="voteLogServiceTxAdvisor" advice-ref="logTxAdvice"
+			pointcut-ref="voteLogServiceTxPointcut" />
+	</aop:config>
+</beans>

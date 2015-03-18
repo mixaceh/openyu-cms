@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<guestbook>
+    <id>TEST_GUESTBOOK</id>
+    <titles>
+        <entry key="zh_TW">測試標題</entry>
+        <entry key="zh_CN">测试标题</entry>
+        <entry key="en_US">Test Title</entry>
+    </titles>
+    <contents>
+        <entry key="zh_TW">測試留言內容</entry>
+        <entry key="zh_CN">测试留言内容</entry>
+        <entry key="en_US">Test Content</entry>
+    </contents>
+    <replys>
+        <entry key="zh_TW">測試回復內容</entry>
+        <entry key="zh_CN">测试回复内容</entry>
+        <entry key="en_US">Test Reply</entry>
+    </replys>
+    <email></email>
+    <phone></phone>
+    <qq></qq>
+    <ip></ip>
+    <checked>false</checked>
+    <recommend>false</recommend>
+    <site>
+        <seq>1</seq>
+        <id>TEST_SITE</id>
+    </site>
+    <guestbookType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="seqIdAuditBeanSupporter">
+        <id>TEST_GUESTBOOK_TYPE</id>
+    </guestbookType>
+</guestbook>
