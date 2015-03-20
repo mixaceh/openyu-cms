@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<moduleCollector>
+    <id>org.openyu.cms.module.vo.ModuleCollector</id>
+    <inquiry>
+        <sorts>
+            <names>
+                <entry key="zh_TW">排序</entry>
+                <entry key="zh_CN">排序</entry>
+                <entry key="en_US">Sort</entry>
+            </names>
+            <id>sort</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">序號</entry>
+                <entry key="zh_CN">序号</entry>
+                <entry key="en_US">Sequence</entry>
+            </names>
+            <id>seq</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">名稱</entry>
+                <entry key="zh_CN">名称</entry>
+                <entry key="en_US">Name</entry>
+            </names>
+            <id>names</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">啟用</entry>
+                <entry key="zh_CN">启用</entry>
+                <entry key="en_US">Valid</entry>
+            </names>
+            <id>valid</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <export>false</export>
+    </inquiry>
+    <defaultModule>DEFAULT</defaultModule>
+    <modules>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <names/>
+                <valid>true</valid>
+                <catalogImgWidth>150</catalogImgWidth>
+                <catalogImgHeight>150</catalogImgHeight>
+                <contextImgWidth>300</contextImgWidth>
+                <contextImgHeight>300</contextImgHeight>
+                <sort>10</sort>
+                <context>true</context>
+                <defaultz>false</defaultz>
+                <catalogItems>
+                    <entry key="name">
+                        <value>
+                            <id>
+<id>name</id>
+<only>false</only>
+                            </id>
+                            <names>
+<entry key="zh_TW">目錄名稱</entry>
+<entry key="zh_CN">目录名称</entry>
+<entry key="en_US">Catalog name</entry>
+                            </names>
+                            <sort>10</sort>
+                            <columnType>STRING</columnType>
+                            <single>false</single>
+                            <custom>false</custom>
+                            <display>true</display>
+                        </value>
+                    </entry>
+                    <entry key="path">
+                        <value>
+                            <id>
+<id>path</id>
+<only>false</only>
+                            </id>
+                            <names>
+<entry key="zh_TW">路徑</entry>
+<entry key="zh_CN">路径</entry>
+<entry key="en_US">Path</entry>
+                            </names>
+                            <sort>10</sort>
+                            <columnType>STRING</columnType>
+                            <single>true</single>
+                            <custom>false</custom>
+                            <display>true</display>
+                        </value>
+                    </entry>
+                </catalogItems>
+                <contextItems>
+                    <entry key="catalogId">
+                        <value>
+                            <id>
+<id>catalogId</id>
+<only>false</only>
+                            </id>
+                            <names>
+<entry key="zh_TW">目錄</entry>
+<entry key="zh_CN">目录</entry>
+<entry key="en_US">Catalog</entry>
+                            </names>
+                            <sort>10</sort>
+                            <columnType>SELECT</columnType>
+                            <single>false</single>
+                            <custom>false</custom>
+                            <display>true</display>
+                        </value>
+                    </entry>
+                    <entry key="title">
+                        <value>
+                            <id>
+<id>title</id>
+<only>false</only>
+                            </id>
+                            <names>
+<entry key="zh_TW">標題</entry>
+<entry key="zh_CN">标题</entry>
+<entry key="en_US">Title</entry>
+                            </names>
+                            <sort>10</sort>
+                            <columnType>STRING</columnType>
+                            <single>false</single>
+                            <custom>false</custom>
+                            <display>true</display>
+                        </value>
+                    </entry>
+                </contextItems>
+            </value>
+        </entry>
+    </modules>
+</moduleCollector>

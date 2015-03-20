@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<friend>
+    <id>TEST_FRIEND</id>
+    <names>
+        <entry key="zh_TW">測試Friend</entry>
+        <entry key="zh_CN">测试Friend</entry>
+        <entry key="en_US">Test friend</entry>
+    </names>
+    <valid>true</valid>
+    <url>e8zOb</url>
+    <logo>wU</logo>
+    <email>Za</email>
+    <descriptions>
+        <entry key="zh_TW">測試描述</entry>
+        <entry key="zh_CN">测试描述</entry>
+        <entry key="en_US">Test Description</entry>
+    </descriptions>
+    <click>54</click>
+    <sort>28</sort>
+    <site>
+        <seq>1</seq>
+        <id>TEST_SITE</id>
+    </site>
+    <friendType>
+        <seq>1</seq>
+        <id>TEST_FRIEND_TYPE</id>
+    </friendType>
+</friend>

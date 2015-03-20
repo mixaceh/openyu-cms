@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tag>
+    <id>TEST_TAG</id>
+    <names>
+        <entry key="zh_TW">測試標籤</entry>
+        <entry key="zh_CN">测试标签</entry>
+        <entry key="en_US">Test Tag</entry>
+    </names>
+</tag>

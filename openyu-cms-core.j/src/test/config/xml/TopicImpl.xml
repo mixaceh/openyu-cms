@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<topic>
+    <id>TEST_TOPIC</id>
+    <names>
+        <entry key="zh_TW">測試專題</entry>
+        <entry key="zh_CN">测试专题</entry>
+        <entry key="en_US">Test Topic</entry>
+    </names>
+    <shortNames>
+        <entry key="zh_TW">測試簡稱</entry>
+        <entry key="zh_CN">测试简称</entry>
+        <entry key="en_US">Test Topic Short Name</entry>
+    </shortNames>
+    <descriptions>
+        <entry key="zh_TW">測試描述</entry>
+        <entry key="zh_CN">测试描述</entry>
+        <entry key="en_US">Test Description</entry>
+    </descriptions>
+    <titleImg>k7iuPO6xDA</titleImg>
+    <titleImgWidth>0</titleImgWidth>
+    <titleImgHeight>0</titleImgHeight>
+    <contextImg>Qvu0V9zt3c</contextImg>
+    <contextImgWidth>0</contextImgWidth>
+    <contextImgHeight>0</contextImgHeight>
+    <template>sxAch</template>
+    <sort>74</sort>
+    <recommend>true</recommend>
+    <site>
+        <seq>1</seq>
+        <id>TEST_SITE</id>
+    </site>
+</topic>

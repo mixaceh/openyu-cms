@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<site>
+    <id>TEST_SITE</id>
+    <names>
+        <entry key="zh_TW">測試網站</entry>
+        <entry key="zh_CN">测试网站</entry>
+        <entry key="en_US">Test Site</entry>
+    </names>
+    <resourcePath>IDCQp</resourcePath>
+    <shortNames>
+        <entry key="zh_TW">測試網站簡稱</entry>
+        <entry key="zh_CN">测试网站简称</entry>
+        <entry key="en_US">Test Short Name</entry>
+    </shortNames>
+    <protocol>kq</protocol>
+    <dynamicSuffix>tCUQ3</dynamicSuffix>
+    <staticSuffix>ku</staticSuffix>
+    <staticPath>USOYLV5</staticPath>
+    <indexRoot>false</indexRoot>
+    <staticIndex>false</staticIndex>
+    <templatePath>EYfcXLkV</templatePath>
+    <verifyType>_1</verifyType>
+    <modifyType>WITHDRAW</modifyType>
+    <relativePath>true</relativePath>
+    <recover>true</recover>
+    <alias>2WPtlLIQu</alias>
+    <redirect>IWOVUdNh</redirect>
+    <ftp>
+        <seq>1</seq>
+        <id>TEST_FTP</id>
+    </ftp>
+    <attributes>
+        <entry>
+            <key>RHidrZEibH</key>
+            <value>xWbP</value>
+        </entry>
+        <entry>
+            <key>BA</key>
+            <value>t31P7w</value>
+        </entry>
+    </attributes>
+    <texts>
+        <entry>
+            <key>M357yUG</key>
+            <value>RHIEBguc6G</value>
+        </entry>
+        <entry>
+            <key>XjBsX</key>
+            <value>M5r</value>
+        </entry>
+    </texts>
+    <configs>
+        <entry>
+            <key>G0KX</key>
+            <value>n50fsX</value>
+        </entry>
+        <entry>
+            <key>EDbj</key>
+            <value>8XHgfdl1L2</value>
+        </entry>
+    </configs>
+</site>

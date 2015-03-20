@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<resourceCollector>
+    <id>org.openyu.cms.resource.vo.ResourceCollector</id>
+    <actionTypes key="UNKNOWN">-1</actionTypes>
+    <actionTypes key="CREATE_DIR">1</actionTypes>
+    <actionTypes key="CREATE_FILE">2</actionTypes>
+    <actionTypes key="SAVE_FILE">3</actionTypes>
+    <actionTypes key="RENAME_FILE">4</actionTypes>
+    <actionTypes key="RENAME_DIR">5</actionTypes>
+    <actionTypes key="DELETE_FILE">6</actionTypes>
+    <actionTypes key="DELETE_DIR">7</actionTypes>
+    <actionTypes key="UPLOAD_FILE">8</actionTypes>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">未知</entry>
+            <entry key="zh_CN">未知</entry>
+            <entry key="en_US">Unknown</entry>
+        </names>
+        <id>UNKNOWN</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">新建目錄</entry>
+            <entry key="zh_CN">新建目录</entry>
+            <entry key="en_US">Create Directory</entry>
+        </names>
+        <id>CREATE_DIR</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">新建資源</entry>
+            <entry key="zh_CN">新建资源</entry>
+            <entry key="en_US">Create Resource</entry>
+        </names>
+        <id>CREATE_FILE</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">儲存資源</entry>
+            <entry key="zh_CN">保存资源</entry>
+            <entry key="en_US">Save Resource</entry>
+        </names>
+        <id>SAVE_FILE</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">更名資源</entry>
+            <entry key="zh_CN">重命名资源</entry>
+            <entry key="en_US">Rename Resource</entry>
+        </names>
+        <id>RENAME_FILE</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">更名目錄</entry>
+            <entry key="zh_CN">重命名目录</entry>
+            <entry key="en_US">Rename Directory</entry>
+        </names>
+        <id>RENAME_DIR</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">刪除資源</entry>
+            <entry key="zh_CN">删除资源</entry>
+            <entry key="en_US">Delete Resource</entry>
+        </names>
+        <id>DELETE_FILE</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">刪除目錄</entry>
+            <entry key="zh_CN">删除目录</entry>
+            <entry key="en_US">Delete Directory</entry>
+        </names>
+        <id>DELETE_DIR</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">上傳資源</entry>
+            <entry key="zh_CN">上傳资源</entry>
+            <entry key="en_US">Upload Resource</entry>
+        </names>
+        <id>UPLOAD_FILE</id>
+    </actionOptions>
+    <logInquiry>
+        <pagination>
+            <pageSizes>10</pageSizes>
+            <pageSizes>20</pageSizes>
+            <pageSizes>50</pageSizes>
+            <pageSizes>100</pageSizes>
+        </pagination>
+        <sorts>
+            <names>
+                <entry key="zh_TW">記錄日期</entry>
+                <entry key="zh_CN">记录日期</entry>
+                <entry key="en_US">Log Date</entry>
+            </names>
+            <id>logDate</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">使用者</entry>
+                <entry key="zh_CN">用户</entry>
+                <entry key="en_US">User ID</entry>
+            </names>
+            <id>userId</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">IP</entry>
+                <entry key="zh_CN">IP</entry>
+                <entry key="en_US">IP</entry>
+            </names>
+            <id>clientIp</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <orders>
+            <names>
+                <entry key="zh_TW">降冪</entry>
+                <entry key="zh_CN">降幂</entry>
+                <entry key="en_US">Descending</entry>
+            </names>
+            <id>DESC</id>
+        </orders>
+        <orders>
+            <names>
+                <entry key="zh_TW">升冪</entry>
+                <entry key="zh_CN">升幂</entry>
+                <entry key="en_US">Ascending</entry>
+            </names>
+            <id>ASC</id>
+        </orders>
+        <export>false</export>
+    </logInquiry>
+</resourceCollector>

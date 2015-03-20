@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<siteCollector>
+    <id>org.openyu.cms.site.vo.SiteCollector</id>
+    <verifyTypes key="_0">0</verifyTypes>
+    <verifyTypes key="_1">1</verifyTypes>
+    <verifyTypes key="_2">2</verifyTypes>
+    <modifyTypes key="CAN_NOT_MODIFY">1</modifyTypes>
+    <modifyTypes key="WITHDRAW">2</modifyTypes>
+    <modifyTypes key="UNCHANGING">3</modifyTypes>
+    <inquiry>
+        <sorts>
+            <names>
+                <entry key="zh_TW">網域</entry>
+                <entry key="zh_CN">网域</entry>
+                <entry key="en_US">Domain</entry>
+            </names>
+            <id>id</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">序號</entry>
+                <entry key="zh_CN">序号</entry>
+                <entry key="en_US">Sequence</entry>
+            </names>
+            <id>seq</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">名稱</entry>
+                <entry key="zh_CN">名称</entry>
+                <entry key="en_US">Name</entry>
+            </names>
+            <id>names</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <export>false</export>
+    </inquiry>
+    <defaultSite>DEFAULT</defaultSite>
+    <sites>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <names/>
+                <shortNames/>
+                <protocol>http://</protocol>
+                <dynamicSuffix>.yhtml</dynamicSuffix>
+                <staticSuffix>.html</staticSuffix>
+                <indexRoot>false</indexRoot>
+                <staticIndex>false</staticIndex>
+                <verifyType>_2</verifyType>
+                <modifyType>UNCHANGING</modifyType>
+                <relativePath>false</relativePath>
+                <recover>true</recover>
+                <attributes/>
+                <texts/>
+                <configs/>
+            </value>
+        </entry>
+    </sites>
+    <protocolOptions>http://</protocolOptions>
+    <protocolOptions>https://</protocolOptions>
+    <dynamicSuffixOptions>.yhtml</dynamicSuffixOptions>
+    <staticSuffixOptions>.html</staticSuffixOptions>
+    <staticSuffixOptions>.shtml</staticSuffixOptions>
+    <verifyTypeOptions>
+        <names>
+            <entry key="zh_TW">0級</entry>
+            <entry key="zh_CN">0级</entry>
+            <entry key="en_US">level 0</entry>
+        </names>
+        <id>_0</id>
+    </verifyTypeOptions>
+    <verifyTypeOptions>
+        <names>
+            <entry key="zh_TW">1級</entry>
+            <entry key="zh_CN">1级</entry>
+            <entry key="en_US">level 1</entry>
+        </names>
+        <id>_1</id>
+    </verifyTypeOptions>
+    <verifyTypeOptions>
+        <names>
+            <entry key="zh_TW">2級</entry>
+            <entry key="zh_CN">2级</entry>
+            <entry key="en_US">level 2</entry>
+        </names>
+        <id>_2</id>
+    </verifyTypeOptions>
+    <modifyTypeOptions>
+        <names>
+            <entry key="zh_TW">不能修改刪除</entry>
+            <entry key="zh_CN">不能修改删除</entry>
+            <entry key="en_US">can not modify</entry>
+        </names>
+        <id>CAN_NOT_MODIFY</id>
+    </modifyTypeOptions>
+    <modifyTypeOptions>
+        <names>
+            <entry key="zh_TW">修改後退回</entry>
+            <entry key="zh_CN">修改后退回</entry>
+            <entry key="en_US">withdraw after modified</entry>
+        </names>
+        <id>WITHDRAW</id>
+    </modifyTypeOptions>
+    <modifyTypeOptions>
+        <names>
+            <entry key="zh_TW">修改後不變</entry>
+            <entry key="zh_CN">修改后不变</entry>
+            <entry key="en_US">unchanging after modified</entry>
+        </names>
+        <id>UNCHANGING</id>
+    </modifyTypeOptions>
+</siteCollector>

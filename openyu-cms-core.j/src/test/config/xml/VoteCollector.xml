@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<voteCollector>
+    <id>org.openyu.cms.vote.vo.VoteCollector</id>
+    <KEY>org.openyu.cms.vote.vo.VoteCollector</KEY>
+    <inquiry>
+        <sorts>
+            <names>
+                <entry key="zh_TW">序號</entry>
+                <entry key="zh_CN">序号</entry>
+                <entry key="en_US">Sequence</entry>
+            </names>
+            <id>seq</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">標題</entry>
+                <entry key="zh_CN">标题</entry>
+                <entry key="en_US">Name</entry>
+            </names>
+            <id>names</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">總投票數</entry>
+                <entry key="zh_CN">总投票数</entry>
+                <entry key="en_US">Total Count</entry>
+            </names>
+            <id>totalCount</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">啟用</entry>
+                <entry key="zh_CN">启用</entry>
+                <entry key="en_US">Valid</entry>
+            </names>
+            <id>valid</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <export>false</export>
+    </inquiry>
+    <defaultVote>DEFAULT</defaultVote>
+    <votes>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <names>
+                    <entry key="zh_TW">測試投票</entry>
+                    <entry key="zh_CN">测试投票</entry>
+                    <entry key="en_US">Test Vote</entry>
+                </names>
+                <descriptions>
+                    <entry key="zh_TW">測試描述</entry>
+                    <entry key="zh_CN">測試描述</entry>
+                    <entry key="en_US">Description</entry>
+                </descriptions>
+                <repeateHour>24</repeateHour>
+                <totalCount>0</totalCount>
+                <multiSelect>1</multiSelect>
+                <restrictMember>true</restrictMember>
+                <restrictIp>false</restrictIp>
+                <restrictCookie>true</restrictCookie>
+                <valid>true</valid>
+                <defaultz>false</defaultz>
+                <voteItems>
+                    <entry key="zGxsH">
+                        <value>
+                            <id>
+<id>1</id>
+<only>false</only>
+                            </id>
+                            <names>
+<entry key="zh_TW">輸入選項1</entry>
+<entry key="zh_CN">输入选项1</entry>
+<entry key="en_US">Input Option 1</entry>
+                            </names>
+                            <voteCount>0</voteCount>
+                            <sort>1</sort>
+                        </value>
+                    </entry>
+                    <entry key="SiJnQ">
+                        <value>
+                            <id>
+<id>2</id>
+<only>false</only>
+                            </id>
+                            <names>
+<entry key="zh_TW">輸入選項2</entry>
+<entry key="zh_CN">输入选项2</entry>
+<entry key="en_US">Input Option 2</entry>
+                            </names>
+                            <voteCount>0</voteCount>
+                            <sort>2</sort>
+                        </value>
+                    </entry>
+                    <entry key="ASInK">
+                        <value>
+                            <id>
+<id>3</id>
+<only>false</only>
+                            </id>
+                            <names>
+<entry key="zh_TW">輸入選項3</entry>
+<entry key="zh_CN">输入选项3</entry>
+<entry key="en_US">Input Option 3</entry>
+                            </names>
+                            <voteCount>0</voteCount>
+                            <sort>3</sort>
+                        </value>
+                    </entry>
+                </voteItems>
+            </value>
+        </entry>
+    </votes>
+    <targetOptions>_balnk</targetOptions>
+    <targetOptions>_self</targetOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">未知</entry>
+            <entry key="zh_CN">未知</entry>
+            <entry key="en_US">Unknown</entry>
+        </names>
+        <id>UNKNOWN</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">新增</entry>
+            <entry key="zh_CN">新增</entry>
+            <entry key="en_US">Insert</entry>
+        </names>
+        <id>INSERT</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">修改</entry>
+            <entry key="zh_CN">修改</entry>
+            <entry key="en_US">Update</entry>
+        </names>
+        <id>UPDATE</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">刪除</entry>
+            <entry key="zh_CN">删除</entry>
+            <entry key="en_US">Delete</entry>
+        </names>
+        <id>DELETE</id>
+    </actionOptions>
+    <logInquiry>
+        <pagination>
+            <pageSizes>10</pageSizes>
+            <pageSizes>20</pageSizes>
+            <pageSizes>50</pageSizes>
+            <pageSizes>100</pageSizes>
+        </pagination>
+        <sorts>
+            <names>
+                <entry key="zh_TW">記錄日期</entry>
+                <entry key="zh_CN">记录日期</entry>
+                <entry key="en_US">Log Date</entry>
+            </names>
+            <id>logDate</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">使用者</entry>
+                <entry key="zh_CN">用户</entry>
+                <entry key="en_US">User ID</entry>
+            </names>
+            <id>userId</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">IP</entry>
+                <entry key="zh_CN">IP</entry>
+                <entry key="en_US">IP</entry>
+            </names>
+            <id>clientIp</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <orders>
+            <names>
+                <entry key="zh_TW">降冪</entry>
+                <entry key="zh_CN">降幂</entry>
+                <entry key="en_US">Descending</entry>
+            </names>
+            <id>DESC</id>
+        </orders>
+        <orders>
+            <names>
+                <entry key="zh_TW">升冪</entry>
+                <entry key="zh_CN">升幂</entry>
+                <entry key="en_US">Ascending</entry>
+            </names>
+            <id>ASC</id>
+        </orders>
+        <export>false</export>
+    </logInquiry>
+</voteCollector>

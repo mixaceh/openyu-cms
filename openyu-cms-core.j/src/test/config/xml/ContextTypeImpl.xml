@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contextType>
+    <id>TEST_CONTEXT_TYPE</id>
+    <names>
+        <entry key="zh_TW">測試本文類型</entry>
+        <entry key="zh_CN">測試本文类型</entry>
+        <entry key="en_US">Test ContextType</entry>
+    </names>
+    <valid>false</valid>
+    <imgWidth>14</imgWidth>
+    <imgHeight>11</imgHeight>
+    <image>true</image>
+</contextType>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<guestbookTypeCollector>
+    <id>org.openyu.cms.guestbookType.vo.GuestbookTypeCollector</id>
+    <inquiry>
+        <sorts>
+            <names>
+                <entry key="zh_TW">ID</entry>
+                <entry key="zh_CN">ID</entry>
+                <entry key="en_US">ID</entry>
+            </names>
+            <id>id</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">序號</entry>
+                <entry key="zh_CN">序号</entry>
+                <entry key="en_US">Sequence</entry>
+            </names>
+            <id>seq</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">名稱</entry>
+                <entry key="zh_CN">名称</entry>
+                <entry key="en_US">Name</entry>
+            </names>
+            <id>names</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">排序</entry>
+                <entry key="zh_CN">排序</entry>
+                <entry key="en_US">Sort</entry>
+            </names>
+            <id>sort</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <export>false</export>
+    </inquiry>
+    <defaultGuestbookType>DEFAULT</defaultGuestbookType>
+    <guestbookTypes>
+        <entry key="DEFAULT">
+            <value>
+                <id>DEFAULT</id>
+                <names/>
+                <sort>10</sort>
+                <descriptions/>
+            </value>
+        </entry>
+    </guestbookTypes>
+    <targetOptions>_balnk</targetOptions>
+    <targetOptions>_self</targetOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">未知</entry>
+            <entry key="zh_CN">未知</entry>
+            <entry key="en_US">Unknown</entry>
+        </names>
+        <id>UNKNOWN</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">新增</entry>
+            <entry key="zh_CN">新增</entry>
+            <entry key="en_US">Insert</entry>
+        </names>
+        <id>INSERT</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">修改</entry>
+            <entry key="zh_CN">修改</entry>
+            <entry key="en_US">Update</entry>
+        </names>
+        <id>UPDATE</id>
+    </actionOptions>
+    <actionOptions>
+        <names>
+            <entry key="zh_TW">刪除</entry>
+            <entry key="zh_CN">删除</entry>
+            <entry key="en_US">Delete</entry>
+        </names>
+        <id>DELETE</id>
+    </actionOptions>
+    <logInquiry>
+        <pagination>
+            <pageSizes>10</pageSizes>
+            <pageSizes>20</pageSizes>
+            <pageSizes>50</pageSizes>
+            <pageSizes>100</pageSizes>
+        </pagination>
+        <sorts>
+            <names>
+                <entry key="zh_TW">記錄日期</entry>
+                <entry key="zh_CN">记录日期</entry>
+                <entry key="en_US">Log Date</entry>
+            </names>
+            <id>logDate</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">使用者</entry>
+                <entry key="zh_CN">用户</entry>
+                <entry key="en_US">User ID</entry>
+            </names>
+            <id>userId</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <sorts>
+            <names>
+                <entry key="zh_TW">IP</entry>
+                <entry key="zh_CN">IP</entry>
+                <entry key="en_US">IP</entry>
+            </names>
+            <id>clientIp</id>
+            <order>
+                <names/>
+            </order>
+        </sorts>
+        <orders>
+            <names>
+                <entry key="zh_TW">降冪</entry>
+                <entry key="zh_CN">降幂</entry>
+                <entry key="en_US">Descending</entry>
+            </names>
+            <id>DESC</id>
+        </orders>
+        <orders>
+            <names>
+                <entry key="zh_TW">升冪</entry>
+                <entry key="zh_CN">升幂</entry>
+                <entry key="en_US">Ascending</entry>
+            </names>
+            <id>ASC</id>
+        </orders>
+        <export>false</export>
+    </logInquiry>
+</guestbookTypeCollector>

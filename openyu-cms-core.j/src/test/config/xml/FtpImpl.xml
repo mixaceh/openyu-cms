@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ftp>
+    <id>TEST_FTP</id>
+    <names>
+        <entry key="zh_TW">測試Ftp</entry>
+        <entry key="zh_CN">测试Ftp</entry>
+        <entry key="en_US">Test ftp</entry>
+    </names>
+    <ip>192.168.100.129</ip>
+    <port>59446</port>
+    <timeout>3</timeout>
+    <account>kaxuFCYmkK</account>
+    <password>oR</password>
+    <path>rHT</path>
+    <encoding>05fdZhm</encoding>
+    <url>mapasYd</url>
+</ftp>
