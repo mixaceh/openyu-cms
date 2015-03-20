@@ -26,7 +26,7 @@ public abstract class ModuleItemSupporter extends IdNamesBeanSupporter implement
 	/**
 	 * 預設值
 	 */
-	private String defaultz;
+	private String dft;
 
 	/**
 	 * 可選項
@@ -91,14 +91,14 @@ public abstract class ModuleItemSupporter extends IdNamesBeanSupporter implement
 		this.sort = priority;
 	}
 
-	public String getDefault()
+	public String getDft()
 	{
-		return defaultz;
+		return dft;
 	}
 
-	public void setDefault(String defaultz)
+	public void setDft(String dft)
 	{
-		this.defaultz = defaultz;
+		this.dft = dft;
 	}
 
 	public String getOption()
@@ -206,7 +206,7 @@ public abstract class ModuleItemSupporter extends IdNamesBeanSupporter implement
 		ToStringBuilder builder = new ToStringBuilder(this);
 		builder.appendSuper(super.toString());
 		builder.append("sort", sort);
-		builder.append("defaultz", defaultz);
+		builder.append("dft", dft);
 		builder.append("option", option);
 		builder.append("length", length);
 		builder.append("rows", rows);

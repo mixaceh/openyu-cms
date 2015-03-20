@@ -50,7 +50,7 @@ public class GroupDaoImpl extends AppDaoSupporter implements GroupDao
 		hql.append(GROUP_PO_NAME + " ");
 		hql.append("where 1=1 ");
 		//
-		hql.append("and defaultz=true ");
+		hql.append("and dft=true ");
 
 		return findUniqueByHql(hql, params);
 	}

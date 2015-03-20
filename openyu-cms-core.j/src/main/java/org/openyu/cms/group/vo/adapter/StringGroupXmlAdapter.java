@@ -25,7 +25,7 @@ import org.openyu.commons.jaxb.adapter.supporter.BaseXmlAdapterSupporter;
 //        <maxUpload>0</maxUpload>
 //        <captcha>true</captcha>
 //        <check>true</check>
-//        <defaultz>false</defaultz>
+//        <dft>false</dft>
 //    </value>
 //</entry>
 //</groups>

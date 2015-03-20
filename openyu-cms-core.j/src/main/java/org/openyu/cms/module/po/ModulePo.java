@@ -108,9 +108,9 @@ public interface ModulePo extends SeqIdAuditNamesEntity
 	 * 
 	 * @return
 	 */
-	Boolean getDefault();
+	Boolean getDft();
 
-	void setDefault(Boolean defaultz);
+	void setDft(Boolean dft);
 
 	/**
 	 * 多個目錄項目形成"目錄模組"

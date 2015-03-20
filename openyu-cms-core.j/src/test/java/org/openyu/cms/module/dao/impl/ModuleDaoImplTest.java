@@ -56,27 +56,27 @@ public class ModuleDaoImplTest extends ModuleTestSupporter {
 		//
 		result.setSort(randomInt(100));
 		result.setContext(randomBoolean());
-		result.setDefault(randomBoolean());
+		result.setDft(randomBoolean());
 
 		// 目錄模組
 		CatalogItem catalogItem = new CatalogItemImpl();
 		catalogItem.setId(randomString());
 		catalogItem.setSort(randomInt(100));
-		catalogItem.setDefault(randomString());
+		catalogItem.setDft(randomString());
 		catalogItem.setColumnType(randomType(ColumnType.class));
 		result.getCatalogItems().add(catalogItem);
 		//
 		catalogItem = new CatalogItemImpl();
 		catalogItem.setId(randomString());
 		catalogItem.setSort(randomInt(100));
-		catalogItem.setDefault(randomString());
+		catalogItem.setDft(randomString());
 		catalogItem.setColumnType(randomType(ColumnType.class));
 		result.getCatalogItems().add(catalogItem);
 		//
 		catalogItem = new CatalogItemImpl();
 		catalogItem.setId(randomString());
 		catalogItem.setSort(randomInt(100));
-		catalogItem.setDefault(randomString());
+		catalogItem.setDft(randomString());
 		catalogItem.setColumnType(randomType(ColumnType.class));
 		result.getCatalogItems().add(catalogItem);
 
@@ -84,21 +84,21 @@ public class ModuleDaoImplTest extends ModuleTestSupporter {
 		ContextItem contextItem = new ContextItemImpl();
 		contextItem.setId(randomString());
 		contextItem.setSort(randomInt(100));
-		contextItem.setDefault(randomString());
+		contextItem.setDft(randomString());
 		contextItem.setColumnType(randomType(ColumnType.class));
 		result.getContextItems().add(contextItem);
 		//
 		contextItem = new ContextItemImpl();
 		contextItem.setId(randomString());
 		contextItem.setSort(randomInt(100));
-		contextItem.setDefault(randomString());
+		contextItem.setDft(randomString());
 		contextItem.setColumnType(randomType(ColumnType.class));
 		result.getContextItems().add(contextItem);
 		//
 		contextItem = new ContextItemImpl();
 		contextItem.setId(randomString());
 		contextItem.setSort(randomInt(100));
-		contextItem.setDefault(randomString());
+		contextItem.setDft(randomString());
 		contextItem.setColumnType(randomType(ColumnType.class));
 		result.getContextItems().add(contextItem);
 		return result;
@@ -130,7 +130,7 @@ public class ModuleDaoImplTest extends ModuleTestSupporter {
 				actual.getContextImgHeight());
 		assertEquals(expected.getSort(), actual.getSort());
 		assertEquals(expected.getContext(), actual.getContext());
-		assertEquals(expected.getDefault(), actual.getDefault());
+		assertEquals(expected.getDft(), actual.getDft());
 		//
 		assertCollectionEquals(expected.getCatalogItems(), actual.getCatalogItems());
 		assertCollectionEquals(expected.getContextItems(), actual.getContextItems());

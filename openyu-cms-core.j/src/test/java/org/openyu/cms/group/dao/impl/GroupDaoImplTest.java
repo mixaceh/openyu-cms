@@ -44,7 +44,7 @@ public class GroupDaoImplTest extends GroupTestSupporter {
 		result.setDayUpload(randomInt(10000));
 		result.setMaxUpload(randomInt(10000));
 		result.setUploadSuffix(randomString());
-		result.setDefault(randomBoolean());
+		result.setDft(randomBoolean());
 
 		return result;
 	}
@@ -69,7 +69,7 @@ public class GroupDaoImplTest extends GroupTestSupporter {
 		assertEquals(expected.getDayUpload(), actual.getDayUpload());
 		assertEquals(expected.getMaxUpload(), actual.getMaxUpload());
 		assertEquals(expected.getUploadSuffix(), actual.getUploadSuffix());
-		assertEquals(expected.getDefault(), actual.getDefault());
+		assertEquals(expected.getDft(), actual.getDft());
 	}
 
 	@Test
@@ -99,7 +99,7 @@ public class GroupDaoImplTest extends GroupTestSupporter {
 
 			// update
 			groupPo.setName("ooo");
-			groupPo.setDefault(true);
+			groupPo.setDft(true);
 			int updated = groupDao.update(groupPo);
 			printUpdate(i, updated);
 			assertTrue(updated > 0);

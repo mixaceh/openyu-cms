@@ -51,7 +51,7 @@ public class GroupImpl extends SeqIdAuditNamesBeanSupporter implements Group
 	/**
 	 * 是否預設
 	 */
-	private boolean defaultz;
+	private boolean dft;
 
 	public GroupImpl(String id)
 	{
@@ -123,14 +123,14 @@ public class GroupImpl extends SeqIdAuditNamesBeanSupporter implements Group
 		this.check = check;
 	}
 
-	public boolean getDefault()
+	public boolean getDft()
 	{
-		return defaultz;
+		return dft;
 	}
 
-	public void setDefault(boolean defaultz)
+	public void setDft(boolean dft)
 	{
-		this.defaultz = defaultz;
+		this.dft = dft;
 	}
 
 	public String toString()
@@ -143,7 +143,7 @@ public class GroupImpl extends SeqIdAuditNamesBeanSupporter implements Group
 		builder.append("uploadSuffix", uploadSuffix);
 		builder.append("captcha", captcha);
 		builder.append("check", check);
-		builder.append("defaultz", defaultz);
+		builder.append("dft", dft);
 		return builder.toString();
 	}
 

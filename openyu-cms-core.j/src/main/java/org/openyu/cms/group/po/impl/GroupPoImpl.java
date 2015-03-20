@@ -78,7 +78,7 @@ public class GroupPoImpl extends SeqIdAuditNamesEntitySupporter implements Group
 	/**
 	 * 是否預設
 	 */
-	private Boolean defaultz;
+	private Boolean dft;
 
 	public GroupPoImpl()
 	{}
@@ -168,16 +168,16 @@ public class GroupPoImpl extends SeqIdAuditNamesEntitySupporter implements Group
 		this.check = check;
 	}
 
-	@Column(name = "defaultz")
+	@Column(name = "dft")
 	@Field(store = Store.YES, index = Index.YES, analyze = Analyze.NO)
-	public Boolean getDefault()
+	public Boolean getDft()
 	{
-		return defaultz;
+		return dft;
 	}
 
-	public void setDefault(Boolean defaultz)
+	public void setDft(Boolean dft)
 	{
-		this.defaultz = defaultz;
+		this.dft = dft;
 	}
 
 	public String toString()
@@ -190,7 +190,7 @@ public class GroupPoImpl extends SeqIdAuditNamesEntitySupporter implements Group
 		builder.append("uploadSuffix", uploadSuffix);
 		builder.append("captcha", captcha);
 		builder.append("check", check);
-		builder.append("defaultz", defaultz);
+		builder.append("dft", dft);
 		return builder.toString();
 	}
 

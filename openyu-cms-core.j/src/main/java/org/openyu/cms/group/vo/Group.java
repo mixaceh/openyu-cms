@@ -58,8 +58,8 @@ public interface Group extends SeqIdAuditNamesBean
 	/**
 	 * 是否預設
 	 */
-	boolean getDefault();
+	boolean getDft();
 
-	void setDefault(boolean defaultz);
+	void setDft(boolean dft);
 
 }

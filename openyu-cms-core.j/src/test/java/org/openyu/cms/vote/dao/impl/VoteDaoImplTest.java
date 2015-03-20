@@ -11,8 +11,6 @@ import java.util.Locale;
 import java.util.Map;
 
 import org.junit.Test;
-import org.openyu.cms.keyword.vo.Dictionary;
-import org.openyu.cms.keyword.vo.impl.DictionaryImpl;
 import org.openyu.cms.vote.po.VotePo;
 import org.openyu.cms.vote.po.impl.VotePoImpl;
 import org.openyu.cms.vote.vo.Vote;
@@ -58,7 +56,7 @@ public class VoteDaoImplTest extends VoteTestSupporter {
 		result.setRestrictIp(randomBoolean());
 		result.setRestrictCookie(randomBoolean());
 		result.setValid(randomBoolean());
-		result.setDefaultz(randomBoolean());
+		result.setDft(randomBoolean());
 		//
 		// 投票項目
 		Map<String, VoteItem> voteItems = new LinkedHashMap<String, VoteItem>();
@@ -123,7 +121,7 @@ public class VoteDaoImplTest extends VoteTestSupporter {
 		assertEquals(expected.getRestrictIp(), actual.getRestrictIp());
 		assertEquals(expected.getRestrictCookie(), actual.getRestrictCookie());
 		assertEquals(expected.getValid(), actual.getValid());
-		assertEquals(expected.getDefaultz(), actual.getDefaultz());
+		assertEquals(expected.getDft(), actual.getDft());
 		//
 		// assertEquals(expected.getVoteItems(), actual.getVoteItems());
 	}

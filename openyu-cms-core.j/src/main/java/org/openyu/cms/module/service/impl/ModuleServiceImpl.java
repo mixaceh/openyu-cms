@@ -131,11 +131,11 @@ public class ModuleServiceImpl extends AppServiceSupporter implements ModuleServ
 			//
 			if (module.getSeq() == defaultSeq)
 			{
-				module.setDefault(true);
+				module.setDft(true);
 			}
 			else
 			{
-				module.setDefault(false);
+				module.setDft(false);
 			}
 			//
 			int upd = update(module);

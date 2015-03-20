@@ -61,26 +61,26 @@ public class ModuleServiceImplTest extends ModuleTestSupporter {
 		//
 		result.setSort(randomInt());
 		result.setContext(randomBoolean());
-		result.setDefault(randomBoolean());
+		result.setDft(randomBoolean());
 		//
 		CatalogItem catalogItem = new CatalogItemImpl();
 		catalogItem.setId(randomString());
 		catalogItem.setSort(randomInt(100));
-		catalogItem.setDefault(randomString());
+		catalogItem.setDft(randomString());
 		catalogItem.setColumnType(randomType(ColumnType.class));
 		result.getCatalogItems().add(catalogItem);
 		//
 		catalogItem = new CatalogItemImpl();
 		catalogItem.setId(randomString());
 		catalogItem.setSort(randomInt(100));
-		catalogItem.setDefault(randomString());
+		catalogItem.setDft(randomString());
 		catalogItem.setColumnType(randomType(ColumnType.class));
 		result.getCatalogItems().add(catalogItem);
 		//
 		catalogItem = new CatalogItemImpl();
 		catalogItem.setId(randomString());
 		catalogItem.setSort(randomInt(100));
-		catalogItem.setDefault(randomString());
+		catalogItem.setDft(randomString());
 		catalogItem.setColumnType(randomType(ColumnType.class));
 		result.getCatalogItems().add(catalogItem);
 
@@ -113,7 +113,7 @@ public class ModuleServiceImplTest extends ModuleTestSupporter {
 				actual.getContextImgHeight());
 		assertEquals(expected.getSort(), actual.getSort());
 		assertEquals(expected.getContext(), actual.getContext());
-		assertEquals(expected.getDefault(), actual.getDefault());
+		assertEquals(expected.getDft(), actual.getDft());
 		//
 		assertCollectionEquals(expected.getCatalogItems(),
 				actual.getCatalogItems());

@@ -82,9 +82,9 @@ public interface ModuleItem extends IdNamesBean
 	/**
 	 * 預設值
 	 */
-	String getDefault();
+	String getDft();
 
-	void setDefault(String defaultz);
+	void setDft(String dft);
 
 	/**
 	 * 可選項

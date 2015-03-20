@@ -128,7 +128,7 @@ public class VotePoImpl extends SeqIdAuditNamesEntitySupporter implements VotePo
 	/**
 	 * 是否預設主題
 	 */
-	private Boolean defaultz;
+	private Boolean dft;
 
 	/**
 	 * 網站
@@ -299,16 +299,16 @@ public class VotePoImpl extends SeqIdAuditNamesEntitySupporter implements VotePo
 		this.valid = valid;
 	}
 
-	@Column(name = "defaultz")
+	@Column(name = "dft")
 	@Field(store = Store.YES, index = Index.YES, analyze = Analyze.NO)
-	public Boolean getDefaultz()
+	public Boolean getDft()
 	{
-		return defaultz;
+		return dft;
 	}
 
-	public void setDefaultz(Boolean defaultz)
+	public void setDft(Boolean dft)
 	{
-		this.defaultz = defaultz;
+		this.dft = dft;
 	}
 
 	@LazyCollection(LazyCollectionOption.FALSE)
@@ -355,7 +355,7 @@ public class VotePoImpl extends SeqIdAuditNamesEntitySupporter implements VotePo
 		builder.append("restrictIp", restrictIp);
 		builder.append("restrictCookie", restrictCookie);
 		builder.append("valid", valid);
-		builder.append("defaultz", defaultz);
+		builder.append("dft", dft);
 		builder.append("site", site);
 		builder.append("voteItems", voteItems);
 		return builder.toString();

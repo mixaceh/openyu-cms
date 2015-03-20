@@ -35,7 +35,7 @@ public class ModuleImplTest extends AppBeanTestSupporter {
 		//
 		value.setSort(randomInt(100));
 		value.setContext(randomBoolean());
-		value.setDefault(randomBoolean());
+		value.setDft(randomBoolean());
 
 		// catalogItem
 		CatalogItem catalogItem = new CatalogItemImpl();

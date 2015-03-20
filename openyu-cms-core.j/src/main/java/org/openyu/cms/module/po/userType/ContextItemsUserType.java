@@ -80,7 +80,7 @@ public class ContextItemsUserType extends BaseUserTypeSupporter {
 			result.append(PARENT_ENTRY_SPLITTER);
 			result.append(toString(entry.getSort()));// e2
 			result.append(PARENT_ENTRY_SPLITTER);
-			result.append(toString(entry.getDefault()));// e3
+			result.append(toString(entry.getDft()));// e3
 			result.append(PARENT_ENTRY_SPLITTER);
 			result.append(toString(entry.getOption()));// e4
 			result.append(PARENT_ENTRY_SPLITTER);
@@ -174,7 +174,7 @@ public class ContextItemsUserType extends BaseUserTypeSupporter {
 			entry.setNames(namesBeanUserType.disassembleBy_1(buff));// e1
 
 			entry.setSort(toObject(entryValues, edx++, Integer.class));// e2
-			entry.setDefault(toObject(entryValues, edx++, String.class));// e3
+			entry.setDft(toObject(entryValues, edx++, String.class));// e3
 			entry.setOption(toObject(entryValues, edx++, String.class));// e4
 			entry.setLength(toObject(entryValues, edx++, String.class));// e5
 			entry.setRows(toObject(entryValues, edx++, String.class));// e6

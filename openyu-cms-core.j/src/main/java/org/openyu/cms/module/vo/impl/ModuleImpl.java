@@ -83,7 +83,7 @@ public class ModuleImpl extends SeqIdAuditNamesBeanSupporter implements Module
 	/**
 	 * 是否預設
 	 */
-	private boolean defaultz;
+	private boolean dft;
 
 	/**
 	 * 多個目錄項目形成"目錄模組"
@@ -213,14 +213,14 @@ public class ModuleImpl extends SeqIdAuditNamesBeanSupporter implements Module
 		this.context = context;
 	}
 
-	public boolean getDefault()
+	public boolean getDft()
 	{
-		return defaultz;
+		return dft;
 	}
 
-	public void setDefault(boolean defaultz)
+	public void setDft(boolean dft)
 	{
-		this.defaultz = defaultz;
+		this.dft = dft;
 	}
 
 	public Set<CatalogItem> getCatalogItems()
@@ -267,7 +267,7 @@ public class ModuleImpl extends SeqIdAuditNamesBeanSupporter implements Module
 		builder.append("contextImgHeight", contextImgHeight);
 		builder.append("sort", sort);
 		builder.append("context", context);
-		builder.append("default", defaultz);
+		builder.append("dft", dft);
 		builder.append("catalogItems", catalogItems);
 		builder.append("contextItems", contextItems);
 		builder.append("validOption", validOption);

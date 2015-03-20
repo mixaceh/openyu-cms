@@ -32,7 +32,7 @@ public class GroupImplTest extends AppBeanTestSupporter {
 		//
 		value.setUploadSuffix(randomString());
 		//
-		value.setDefault(randomBoolean());
+		value.setDft(randomBoolean());
 		//
 		String result = beanCollector.writeToXml(GroupImpl.class, value);
 		System.out.println(result);

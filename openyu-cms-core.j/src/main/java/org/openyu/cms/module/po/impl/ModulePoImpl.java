@@ -108,7 +108,7 @@ public class ModulePoImpl extends SeqIdAuditNamesEntitySupporter implements Modu
 	/**
 	 * 是否預設
 	 */
-	private Boolean defaultz;
+	private Boolean dft;
 
 	/**
 	 * 多個目錄項目形成"目錄模組"
@@ -256,16 +256,16 @@ public class ModulePoImpl extends SeqIdAuditNamesEntitySupporter implements Modu
 		this.context = context;
 	}
 
-	@Column(name = "defaultz")
+	@Column(name = "dft")
 	@Field(store = Store.YES, index = Index.YES, analyze = Analyze.NO)
-	public Boolean getDefault()
+	public Boolean getDft()
 	{
-		return defaultz;
+		return dft;
 	}
 
-	public void setDefault(Boolean defaultz)
+	public void setDft(Boolean dft)
 	{
-		this.defaultz = defaultz;
+		this.dft = dft;
 	}
 
 	@Column(name = "catalog_items", length = 8192)
@@ -310,7 +310,7 @@ public class ModulePoImpl extends SeqIdAuditNamesEntitySupporter implements Modu
 		builder.append("contextImgHeight", contextImgHeight);
 		builder.append("sort", sort);
 		builder.append("context", context);
-		builder.append("default", defaultz);
+		builder.append("dft", dft);
 		builder.append("catalogItems", catalogItems);
 		builder.append("contextItems", contextItems);
 		return builder.toString();

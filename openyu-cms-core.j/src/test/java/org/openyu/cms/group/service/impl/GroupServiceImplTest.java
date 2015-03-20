@@ -43,7 +43,7 @@ public class GroupServiceImplTest extends GroupTestSupporter
 		result.setDayUpload(randomInt(10000));
 		result.setMaxUpload(randomInt(10000));
 		result.setUploadSuffix(randomString());
-		result.setDefault(randomBoolean());
+		result.setDft(randomBoolean());
 		
 		return result;
 	}
@@ -68,7 +68,7 @@ public class GroupServiceImplTest extends GroupTestSupporter
 		assertEquals(expected.getDayUpload(), actual.getDayUpload());
 		assertEquals(expected.getMaxUpload(), actual.getMaxUpload());
 		assertEquals(expected.getUploadSuffix(), actual.getUploadSuffix());
-		assertEquals(expected.getDefault(), actual.getDefault());
+		assertEquals(expected.getDft(), actual.getDft());
 	}
 
 	@Test

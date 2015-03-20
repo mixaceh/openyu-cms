@@ -81,7 +81,7 @@ public class VoteDaoImpl extends AppDaoSupporter implements VoteDao
 		hql.append(MODULE_PO_NAME + " ");
 		hql.append("where 1=1 ");
 		//
-		hql.append("and defaultz=true ");
+		hql.append("and dft=true ");
 
 		return findUniqueByHql(hql);
 	}

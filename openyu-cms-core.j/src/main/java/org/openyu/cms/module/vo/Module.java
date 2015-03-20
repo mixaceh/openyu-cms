@@ -110,9 +110,9 @@ public interface Module extends SeqIdAuditNamesBean
 	 * 
 	 * @return
 	 */
-	boolean getDefault();
+	boolean getDft();
 
-	void setDefault(boolean defaultz);
+	void setDft(boolean dft);
 
 	/**
 	 * 多個目錄項目形成"目錄模組"

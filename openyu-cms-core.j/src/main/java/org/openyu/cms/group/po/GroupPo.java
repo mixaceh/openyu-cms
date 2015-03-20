@@ -54,8 +54,8 @@ public interface GroupPo extends SeqIdAuditNamesEntity
 	/**
 	 * 是否預設
 	 */
-	Boolean getDefault();
+	Boolean getDft();
 
-	void setDefault(Boolean defaultz);
+	void setDft(Boolean dft);
 
 }

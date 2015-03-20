@@ -110,9 +110,9 @@ public interface VotePo extends SeqIdAuditNamesEntity
 	 * 是否預設主題
 	 * @return
 	 */
-	Boolean getDefaultz();
+	Boolean getDft();
 
-	void setDefaultz(Boolean defaultz);
+	void setDft(Boolean dft);
 
 	/**
 	 * 網站

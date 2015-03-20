@@ -27,7 +27,7 @@ import org.openyu.commons.jaxb.adapter.supporter.BaseXmlAdapterSupporter;
 //        <contextImgHeight>300</contextImgHeight>
 //        <sort>10</sort>
 //        <context>true</context>
-//        <defaultz>false</defaultz>
+//        <dft>false</dft>
 //        <catalogItems/>
 //        </contextItems>
 //    </value>
