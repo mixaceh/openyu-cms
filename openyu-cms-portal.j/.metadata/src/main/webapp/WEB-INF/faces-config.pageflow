@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14224979413790" configfile="/openyu-archetype-richfaces4.j/src/main/webapp/WEB-INF/faces-config.xml"/>
+<pageflow:Pageflow xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14224979413790" configfile="/openyu-cms-portal.j/src/main/webapp/WEB-INF/faces-config.xml"/>
