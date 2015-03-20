@@ -41,7 +41,7 @@
 			<value>/WEB-INF/custom/template</value>
 		</property>
 		<property name="backupPathLocation">
-			<value>/WEB-INF/backup</value>
+			<value>/WEB-INF/custom/backup</value>
 		</property>
 	</bean>
 

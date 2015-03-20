@@ -71,7 +71,8 @@ public class AppConfigHelper extends ConfigHelper {
 	/**
 	 * 預設Backup相對路徑
 	 */
-	private final static String DEFAULT_BACKUP_PATH = "buckup";
+	private final static String DEFAULT_BACKUP_PATH = "custom" + File.separator
+			+ "buckup";
 
 	/**
 	 * Backup相對路徑
@@ -102,7 +103,7 @@ public class AppConfigHelper extends ConfigHelper {
 	}
 
 	// --------------------------------------------------------
-	
+
 	public static String getResourcePath() {
 		return resourcePath;
 	}
@@ -234,10 +235,10 @@ public class AppConfigHelper extends ConfigHelper {
 			AppConfigHelper.backupPathLocation = backupPathLocation;
 			if (backupPathLocation instanceof ServletContextResource) {
 				ServletContextResource recource = (ServletContextResource) backupPathLocation;
-				// /WEB-INF/backup
+				// /WEB-INF/custom/backup
 				AppConfigHelper.backupPath = recource.getPathWithinContext();
 			} else {
-				// WebContent/WEB-INF/backup
+				// WebContent/WEB-INF/custom/backup
 				AppConfigHelper.backupPath = backupPathLocation.getFile()
 						.getPath();
 			}

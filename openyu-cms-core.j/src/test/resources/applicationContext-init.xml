@@ -8,7 +8,7 @@
 	<!-- configHelper -->
 	<bean id="configHelper" class="org.openyu.cms.app.util.AppConfigHelper">
 		<property name="configLocation">
-			<value>file:src/main/webapp/WEB-INF/config/etc/config.xml</value>
+			<value>file:src/test/config/etc/config.xml</value>
 		</property>
 		<!--  
 		<property name="log4jConfigLocation">
@@ -16,37 +16,37 @@
 		</property>
 		-->
 		<property name="jsonDirLocation">
-			<value>file:src/main/webapp/WEB-INF/config/json</value>
+			<value>file:src/test/config/json</value>
 		</property>
 		<property name="keyDirLocation">
-			<value>file:src/main/webapp/WEB-INF/config/key</value>
+			<value>file:src/test/config/key</value>
 		</property>
 		<property name="serDirLocation">
-			<value>file:src/main/webapp/WEB-INF/config/ser</value>
+			<value>file:src/test/config/ser</value>
 		</property>
 		<property name="xmlDirLocation">
-			<value>file:src/main/webapp/WEB-INF/config/xml</value>
+			<value>file:src/test/config/xml</value>
 		</property>
 		<property name="excelDirLocation">
-			<value>file:src/main/webapp/WEB-INF/config/excel</value>
+			<value>file:src/test/config/excel</value>
 		</property>
 		<property name="outputDirLocation">
-			<value>file:src/main/webapp/custom/output</value>
+			<value>file:custom/output</value>
 		</property>
 		<property name="downloadDirLocation">
-			<value>file:src/main/webapp/custom/download</value>
+			<value>file:custom/download</value>
 		</property>
 		<property name="uploadDirLocation">
-			<value>file:src/main/webapp/custom/upload</value>
+			<value>file:custom/upload</value>
 		</property>
 		<property name="resourcePathLocation">
-			<value>file:src/main/webapp/custom/resource</value>
+			<value>file:custom/resource</value>
 		</property>
 		<property name="templatePathLocation">
-			<value>file:src/main/webapp/WEB-INF/custom/template</value>
+			<value>file:custom/template</value>
 		</property>
 		<property name="backupPathLocation">
-			<value>file:src/main/webapp/WEB-INF/backup</value>
+			<value>file:custom/backup</value>
 		</property>
 	</bean>
 
@@ -56,8 +56,8 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
-				<value>file:src/main/webapp/WEB-INF/config/etc/database.properties</value>
-				<value>file:src/main/webapp/WEB-INF/config/etc/database-log.properties
+				<value>file:src/test/config/etc/database.properties</value>
+				<value>file:src/test/config/etc/database-log.properties
 				</value>
 			</list>
 		</property>
@@ -69,7 +69,7 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
-				<value>file:src/main/webapp/WEB-INF/config/etc/authKeyService.properties
+				<value>file:src/test/config/etc/authKeyService.properties
 				</value>
 			</list>
 		</property>
@@ -116,7 +116,7 @@
 	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
 		<property name="resourceLoaderPath" value="file:src/main/webapp/WEB-INF/custom/template" />
 		<property name="configLocation"
-			value="file:src/main/webapp/WEB-INF/config/etc/velocity.properties" />
+			value="file:src/test/config/etc/velocity.properties" />
 	</bean>
 
 	<!-- freeMarker -->
@@ -124,7 +124,7 @@
 		class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
 		<property name="templateLoaderPath" value="file:src/main/webapp/WEB-INF/custom/template" />
 		<property name="configLocation"
-			value="file:src/main/webapp/WEB-INF/config/etc/freemarker.properties" />
+			value="file:src/test/config/etc/freemarker.properties" />
 	</bean>
 
 	<!-- autowired -->

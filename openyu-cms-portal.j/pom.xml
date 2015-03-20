@@ -38,6 +38,11 @@
 			<artifactId>openyu-commons-core</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.openyu.cms</groupId>
+			<artifactId>openyu-cms-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 	
 	<build>
