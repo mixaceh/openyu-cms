@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
         <property name="java-output-path" value="/openyu-archetype-richfaces4.j/target/classes"/>
-        <property name="context-root" value="richfaces4"/>
+        <property name="context-root" value="cms"/>
     </wb-module>
 </project-modules>
