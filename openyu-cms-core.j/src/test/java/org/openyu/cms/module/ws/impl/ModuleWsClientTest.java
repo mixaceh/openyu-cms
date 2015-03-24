@@ -36,7 +36,7 @@ public class ModuleWsClientTest
 	{
 		JaxWsServerFactoryBean factory = new JaxWsServerFactoryBean();
 		//
-		String address = "http://localhost:8080/csm/web/service/module";
+		String address = "http://localhost:8080/cms/web/service/module";
 		factory.setAddress(address);
 		//
 		factory.setServiceClass(ModuleWs.class);
@@ -53,7 +53,7 @@ public class ModuleWsClientTest
 		JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
 		factory.setServiceClass(ModuleWs.class);
 
-		String address = "http://localhost:8080/csm/web/service/module";
+		String address = "http://localhost:8080/cms/web/service/module";
 		factory.setAddress(address);
 		ModuleWs service = (ModuleWs) factory.create();
 		//

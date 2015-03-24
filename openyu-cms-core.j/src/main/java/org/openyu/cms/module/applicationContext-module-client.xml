@@ -7,6 +7,6 @@
 
 	<!-- ws client (Easy Way) -->
 	<jaxws:client id="moduleWs" serviceClass="org.openyu.cms.module.ws.ModuleWs"
-		address="http://localhost:8080/csm/web/service/module" /> 
+		address="http://localhost:8080/cms/web/service/module" /> 
 
 </beans>

@@ -39,7 +39,7 @@ public class SpringModuleWsClientTest
 	{
 		JaxWsServerFactoryBean factory = new JaxWsServerFactoryBean();
 		//
-		String address = "http://localhost:8080/csm/web/service/module";
+		String address = "http://localhost:8080/cms/web/service/module";
 		factory.setAddress(address);
 		//
 		factory.setServiceClass(ModuleWs.class);

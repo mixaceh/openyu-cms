@@ -22,7 +22,7 @@ public interface ModuleWs extends AppWs
 	 * @param valid
 	 * @return
 	 */
-	//http://localhost:8080/csm/web/service/module/findModule?valid=true
+	//http://localhost:8080/cms/web/service/module/findModule?valid=true
 	List<Module> findModule(@WebParam(name = "valid")
 	boolean valid);
 
