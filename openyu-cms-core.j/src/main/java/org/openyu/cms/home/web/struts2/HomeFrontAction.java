@@ -15,25 +15,31 @@ import org.openyu.cms.app.web.struts2.supporter.AppActionSupporter;
 @ParentPackage("defaultFront")
 @Namespace("/front/service/home")
 @Result(name = "success", type = "freemarker", location = "index.ftl")
-public class HomeFrontAction extends AppActionSupporter
-{
+public class HomeFrontAction extends AppActionSupporter {
 
 	private static final long serialVersionUID = -6860350811734548252L;
 
-	private static transient final Logger log = LogManager.getLogger(HomeFrontAction.class);
+	private static transient final Logger log = LogManager
+			.getLogger(HomeFrontAction.class);
 
-	public HomeFrontAction()
-	{}
+	public HomeFrontAction() {
+	}
+
+	/**
+	 * 初始化
+	 */
+	public void initialize() {
+		super.initialize();
+		//
+	}
 
 	@Action(value = "index")
-	public String execute()
-	{
+	public String execute() {
 		return SUCCESS;
 	}
 
 	@Action(value = "locale")
-	public String locale()
-	{
+	public String locale() {
 		return SUCCESS;
 	}
 

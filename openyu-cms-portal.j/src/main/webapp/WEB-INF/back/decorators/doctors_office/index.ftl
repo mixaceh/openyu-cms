@@ -6,7 +6,7 @@
 		<#include "/WEB-INF/app/meta.ftl">
 		<@s.head />
 		<@sx.head extraLocales="zh,zh-tw,zh-cn,en-us" />
-		<title><@decorator.title default="global.app" /></title>
+		<title><@decorator.title default="global.backend" /></title>
 	
 		<link rel="stylesheet" type="text/css"
 			href="${base}/back/theme/doctors_office/doctors_office.css"

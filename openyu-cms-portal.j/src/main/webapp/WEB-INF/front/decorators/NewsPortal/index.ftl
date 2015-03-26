@@ -2,14 +2,14 @@
 
 <html>
 <link
-	href="${base}/back/theme/NewsPortal/css/style.css"
+	href="${base}/front/theme/NewsPortal/css/style.css"
 	rel="stylesheet" type="text/css">
 
 <head>
 <#include "/WEB-INF/app/meta.ftl">
 <@s.head />
 <@sx.head />
-<title><@decorator.title default="global.app.front" /></title>
+<title><@decorator.title default="global.frontend" /></title>
 
 <script type="text/javascript"
 	src="${base}/jquery/jquery-1.10.2.js">

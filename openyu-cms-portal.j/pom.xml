@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>openyu-cms-portal</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>OpenYu Content Management System Portal</name>
 	<description>OpenYu Content Management System Portal</description>

@@ -10,7 +10,7 @@
              http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
 	<!-- init by project -->
-	<import resource="classpath:web-applicationContext-init.xml" />
+	<import resource="classpath:applicationContext-init.xml" />
 	<import resource="classpath:META-INF/applicationContext-commons-core.xml" />
 	<import resource="classpath:applicationContext-message.xml" />
 	<import resource="classpath:applicationContext-database.xml" />

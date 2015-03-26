@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title><@s.text name="global.app.front" /></title>
+<title><@s.text name="global.frontend" /> - <@s.text name="global.app" /></title>
 </head>
 
 
