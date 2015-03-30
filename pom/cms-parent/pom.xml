@@ -37,6 +37,9 @@
 		<maven.build.timestamp.format>yyyy/MM/dd HH:mm:ss</maven.build.timestamp.format>
 		<maven.test.skip>false</maven.test.skip>
 
+		<!-- 
+		<struts.version>2.2.1</struts.version>
+		-->
 		<struts.version>2.3.20</struts.version>
 		<!--  
 		<spring.version>3.2.13.RELEASE</spring.version>
@@ -251,6 +254,43 @@
 			<version>1.3</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.carrotsearch</groupId>
+			<artifactId>junit-benchmarks</artifactId>
+			<version>0.7.2</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.3.1</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>asm</artifactId>
+					<groupId>org.ow2.asm</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymockclassextension</artifactId>
+			<version>3.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>1.10.19</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>hamcrest-core</artifactId>
+					<groupId>org.hamcrest</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>		
 		
 		<!--  	
 		<dependency>
@@ -999,12 +1039,12 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
-			<version>2.2.1</version>
+			<version>${struts.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts.xwork</groupId>
 			<artifactId>xwork-core</artifactId>
-			<version>2.2.1</version>
+			<version>${struts.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -1014,7 +1054,7 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
-			<version>2.2.1</version>
+			<version>${struts.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>spring-context</artifactId>
@@ -1037,12 +1077,12 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-json-plugin</artifactId>
-			<version>2.2.1</version>
+			<version>${struts.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-sitemesh-plugin</artifactId>
-			<version>2.2.1</version>
+			<version>${struts.version}</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>junit</artifactId>
@@ -1053,12 +1093,12 @@
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-dojo-plugin</artifactId>
-			<version>2.2.1</version>
+			<version>${struts.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-convention-plugin</artifactId>
-			<version>2.2.1</version>
+			<version>${struts.version}</version>
 		</dependency>
 		<!--
 		<dependency>
@@ -1067,6 +1107,7 @@
 			<version>2.2.1</version>
 		</dependency>
 		-->
+		<!--  
 		<dependency>
 			<groupId>org.apache.avro</groupId>
 			<artifactId>avro</artifactId>
@@ -1093,40 +1134,30 @@
 			<artifactId>mina-core</artifactId>
 			<version>2.0.9</version>
 		</dependency>
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymock</artifactId>
-			<version>3.3.1</version>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>asm</artifactId>
-					<groupId>org.ow2.asm</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.easymock</groupId>
-			<artifactId>easymockclassextension</artifactId>
-			<version>3.2</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>1.10.19</version>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>hamcrest-core</artifactId>
-					<groupId>org.hamcrest</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		-->
 		<dependency>
 			<groupId>org.apache.velocity</groupId>
 			<artifactId>velocity</artifactId>
 			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>2.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>struts-core</artifactId>
+					<groupId>org.apache.struts</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>struts-taglib</artifactId>
+					<groupId>org.apache.struts</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>struts-tiles</artifactId>
+					<groupId>org.apache.struts</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.freemarker</groupId>
@@ -1153,6 +1184,7 @@
 			<artifactId>ehcache-core</artifactId>
 			<version>2.6.10</version>
 		</dependency>
+		<!--  
 		<dependency>
 			<groupId>org.apache.hbase</groupId>
 			<artifactId>hbase</artifactId>
@@ -1317,6 +1349,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
@@ -1327,6 +1360,7 @@
 			<artifactId>gson</artifactId>
 			<version>2.2.4</version>
 		</dependency>
+		<!--  
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
@@ -1337,14 +1371,9 @@
 			<artifactId>mchange-commons-java</artifactId>
 			<version>0.2.3.4</version>
 		</dependency>
+		-->
 
 		<!-- add -->
-		<dependency>
-			<groupId>com.carrotsearch</groupId>
-			<artifactId>junit-benchmarks</artifactId>
-			<version>0.7.2</version>
-			<scope>provided</scope>
-		</dependency>
 		<dependency>
 			<groupId>com.jolbox</groupId>
 			<artifactId>bonecp</artifactId>
@@ -1566,7 +1595,7 @@
 			<version>2.11.0</version>
 		</dependency>
 
-		<!-- 2014/10/28 -->
+		<!-- 2014/10/28 
 		<dependency>
 			<groupId>jline</groupId>
 			<artifactId>jline</artifactId>
@@ -1582,6 +1611,7 @@
 			<artifactId>jansi</artifactId>
 			<version>1.11</version>
 		</dependency>
+		-->
 
 		<!-- 2014/11/03 -->
 		<dependency>
@@ -1590,7 +1620,7 @@
 			<version>2.24.0</version>
 		</dependency>
 
-		<!-- 2014/11/06 -->
+		<!-- 2014/11/06 
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>jaxrs-api</artifactId>
@@ -1627,6 +1657,7 @@
 			<artifactId>resteasy-spring</artifactId>
 			<version>3.0.10.Final</version>
 		</dependency>
+		-->
 
 		<!-- 2014/11/10 -->
 		<dependency>
@@ -1656,6 +1687,7 @@
 			<artifactId>unsafe-tools</artifactId>
 			<version>1.4.4</version>
 		</dependency>
+		<!--  
 		<dependency>
 			<groupId>org.bitcoinj</groupId>
 			<artifactId>bitcoinj-core</artifactId>
@@ -1672,6 +1704,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		-->
 
 		<!-- 2014/11/16 -->
 		<dependency>
@@ -1850,11 +1883,13 @@
 		</dependency>
 		
 		<!-- 2015/01/21 -->
+		<!--  
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
 			<version>4.0.24.Final</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.apache.maven.shared</groupId>
 			<artifactId>maven-mapping</artifactId>
@@ -1866,7 +1901,7 @@
 			<version>1.9.13</version>
 		</dependency>
 
-		<!-- 2015/01/23 -->
+		<!-- 2015/01/23
 		<dependency>
 			<groupId>org.jboss.byteman</groupId>
 			<artifactId>byteman</artifactId>
@@ -1887,6 +1922,7 @@
 			<artifactId>byteman-submit</artifactId>
 			<version>2.2.0.1</version>
 		</dependency>
+		 -->
 		<!--  
 		<dependency>
 			<groupId>org.antlr</groupId>
@@ -1932,6 +1968,7 @@
 			<version>2.11</version>
 		</dependency>
 
+		<!--  
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
@@ -1993,12 +2030,15 @@
 			<artifactId>jersey-mvc-freemarker</artifactId>
 			<version>2.15</version>
 		</dependency>
+		-->
 
+		<!--  
 		<dependency>
 			<groupId>fr.opensagres.xdocreport</groupId>
 			<artifactId>xdocreport</artifactId>
 			<version>1.0.5</version>
 		</dependency>
+		-->
 
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
@@ -2039,6 +2079,12 @@
 			<groupId>org.apache.xmlbeans</groupId>
 			<artifactId>xmlbeans</artifactId>
 			<version>2.6.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>stax</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 	</dependencies>
 

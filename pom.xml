@@ -6,7 +6,7 @@
 		<artifactId>openyu-cms-parent</artifactId>
 		<version>1</version>
 		<relativePath>pom/cms-parent/pom.xml</relativePath>
-	</parent>
+	</parent>	
 
 	<artifactId>openyu-cms</artifactId>
 	<version>1.0.0</version>
