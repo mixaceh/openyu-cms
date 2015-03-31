@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="
              http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
              http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
@@ -8,94 +8,82 @@
 	<!-- configHelper -->
 	<bean id="configHelper" class="org.openyu.cms.app.util.AppConfigHelper">
 		<property name="configLocation">
-			<value>/WEB-INF/data/conf/config.xml</value>
+			<value>file:../etc/config.xml</value>
+		</property>
+		<property name="log4jConfigLocation">
+			<value>file:../etc/log4j.properties</value>
 		</property>
 		<property name="jsonDirLocation">
-			<value>/WEB-INF/data/json</value>
+			<value>file:../json</value>
 		</property>
 		<property name="keyDirLocation">
-			<value>/WEB-INF/data/key</value>
+			<value>file:../key</value>
 		</property>
 		<property name="serDirLocation">
-			<value>/WEB-INF/data/ser</value>
+			<value>file:../ser</value>
 		</property>
 		<property name="xmlDirLocation">
-			<value>/WEB-INF/data/xml</value>
+			<value>file:../xml</value>
 		</property>
 		<property name="excelDirLocation">
-			<value>/WEB-INF/data/excel</value>
+			<value>file:../excel</value>
 		</property>
 		<property name="outputDirLocation">
-			<value>custom/output</value>
+			<value>file:../custom/output</value>
 		</property>
 		<property name="downloadDirLocation">
-			<value>custom/download</value>
+			<value>file:../custom/download</value>
 		</property>
 		<property name="uploadDirLocation">
-			<value>custom/upload</value>
+			<value>file:../custom/upload</value>
 		</property>
 		<property name="resourcePathLocation">
-			<value>custom/resource</value>
+			<value>file:../custom/resource</value>
 		</property>
 		<property name="templatePathLocation">
-			<value>/WEB-INF/custom/template</value>
+			<value>file:../custom/template</value>
 		</property>
 		<property name="backupPathLocation">
-			<value>/WEB-INF/backup</value>
+			<value>file:../custom/backup</value>
 		</property>
 	</bean>
 
-	<bean id="propertyConfigurer"
+	<bean id="propertyPlaceholderConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="1" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
-				<value>/WEB-INF/data/conf/database.properties</value>
-				<value>/WEB-INF/data/conf/database-log.properties</value>
-				<value>/WEB-INF/data/conf/authKeyService.properties</value>				
+				<value>../etc/database.properties</value>
+				<value>../etc/database-log.properties</value>
 			</list>
 		</property>
 	</bean>
 
-	<!--  
-	<bean id="cacheProvider" class="org.openyu.commons.hibernate.EhCacheProvider">
-		<property name="cacheManagerName">
-			<value>cacheProvider</value>
-		</property>
-		<property name="configLocation">
-			<value>classpath:ehcache.xml</value>
-		</property>
-		<property name="diskStoreLocation">
-			<value>/WEB-INF/ehcache</value>
-		</property>
-	</bean>
-	-->
-
-	<!--
-	<bean id="logCacheProvider" class="org.openyu.commons.hibernate.EhCacheProvider">
-		<property name="cacheManagerName">
-			<value>logCacheProvider</value>
-		</property>
-		<property name="configLocation">
-			<value>classpath:ehcache-log.xml</value>
-		</property>
-		<property name="diskStoreLocation">
-			<value>/WEB-INF/ehcache-log</value>
+	<bean id="servicePropertyPlaceholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="order" value="2" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+			<list>
+				<value>../etc/authKeyService.properties
+				</value>
+			</list>
 		</property>
 	</bean>
-	-->
 
 	<!-- velocity -->
 	<bean id="velocityConfigurer"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-		<property name="resourceLoaderPath" value="/WEB-INF/custom/template" />
-		<property name="configLocation" value="/WEB-INF/data/conf/velocity.properties" />
+		<property name="resourceLoaderPath" value="file:../custom/template/vm" />
+		<property name="configLocation" value="file:../etc/velocity.properties" />
 	</bean>
 
 	<!-- freeMarker -->
 	<bean id="freeMarkerConfigurer"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
-		<property name="templateLoaderPath" value="/WEB-INF/custom/template" />
-		<property name="configLocation" value="/WEB-INF/data/conf/freemarker.properties" />
+		<property name="templateLoaderPath" value="file:../custom/template/ftl" />
+		<property name="configLocation" value="file:../etc/freemarker.properties" />
 	</bean>
 
 	<!-- autowired -->

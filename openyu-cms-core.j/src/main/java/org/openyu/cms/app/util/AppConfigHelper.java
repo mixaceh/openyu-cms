@@ -10,7 +10,7 @@ import org.springframework.web.context.support.ServletContextResource;
 import org.openyu.commons.util.ConfigHelper;
 
 /**
- * 1.預設設定檔: data/conf/config.xml
+ * 1.預設設定檔: src/test/config/etc/config.xml
  * 
  * 2.直接使用static方法取值
  * 
