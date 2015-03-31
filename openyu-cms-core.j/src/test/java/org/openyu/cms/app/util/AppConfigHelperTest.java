@@ -20,26 +20,26 @@ public class AppConfigHelperTest extends BaseTestSupporter {
 
 	@Test
 	public void resourcePath() {
-		// WebContent\custom\resource
-		// web: /localhost/csm/custom/resource
+		// webapp\custom\resource
+		// web: /localhost/cms/custom/resource
 		System.out.println(AppConfigHelper.getResourcePath());
 
-		// URL [file:WebContent/custom/resource]
+		// URL [file:webapp/custom/resource]
 		System.out.println(appConfigHelper.getResourcePathLocation());
 
-		// C:\java\apps\jyu6\trunk\wd\csm\WebContent\custom\resource
+		// D:\dev\openyu7\trunk\openyu-cms.j\openyu-cms-core.j\custom\resource
 		System.out.println(AppConfigHelper.getResourceAbsolutePath());
 	}
 
 	@Test
 	public void templatePath() {
-		// WebContent\WEB-INF\custom\template
+		// webapp\WEB-INF\custom\template
 		System.out.println(AppConfigHelper.getTemplatePath());
 
-		// URL [file:WebContent/WEB-INF/custom/template]
+		// URL [file:webapp/WEB-INF/custom/template]
 		System.out.println(appConfigHelper.getTemplatePathLocation());
 
-		// C:\java\apps\jyu6\trunk\wd\csm\WebContent\WEB-INF\custom\template
+		// D:\dev\openyu7\trunk\openyu-cms.j\openyu-cms-core.j\custom\template
 		System.out.println(AppConfigHelper.getTemplateAbsolutePath());
 	}
 }
