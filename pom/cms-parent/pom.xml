@@ -48,7 +48,7 @@
 		<!--  
 		<hibernate.version>3.6.10.Final</hibernate.version>
 		-->
-		<hibernate.version>4.3.7.Final</hibernate.version>
+		<hibernate.version>4.3.8.Final</hibernate.version>
 		<cxf.version>3.0.2</cxf.version>
 	</properties>
 
@@ -787,6 +787,7 @@
 			<artifactId>spring-amqp</artifactId>
 			<version>1.4.1.RELEASE</version>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
@@ -818,6 +819,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot</artifactId>
@@ -918,7 +920,7 @@
 		<dependency>
 			<groupId>org.hibernate.common</groupId>
 			<artifactId>hibernate-commons-annotations</artifactId>
-			<version>4.0.4.Final</version>
+			<version>4.0.5.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -948,7 +950,6 @@
 					<groupId>org.hibernate.javax.persistence</groupId>
 				</exclusion>
 			</exclusions>
-
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -1497,11 +1498,13 @@
 			<artifactId>aspectjtools</artifactId>
 			<version>1.8.1</version>
 		</dependency>
+		<!--  
 		<dependency>
 			<groupId>com.rabbitmq</groupId>
 			<artifactId>amqp-client</artifactId>
 			<version>3.3.4</version>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>net.jpountz.lz4</groupId>
 			<artifactId>lz4</artifactId>
@@ -1596,6 +1599,7 @@
 			<artifactId>httpasyncclient</artifactId>
 			<version>4.0.2</version>
 		</dependency>
+		<!--  
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
@@ -1606,6 +1610,7 @@
 			<artifactId>jersey-client</artifactId>
 			<version>1.18.1</version>
 		</dependency>
+		-->
 
 		<!-- 2014/10/21 -->
 		<dependency>
@@ -1767,7 +1772,6 @@
 			<version>${cxf.version}</version>
 		</dependency>
 		-->
-		
 
 		<!-- 2014/12/27 -->
 		<dependency>
@@ -2063,7 +2067,7 @@
 			<version>1.0.5</version>
 		</dependency>
 		-->
-
+		<!--  
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-core</artifactId>
@@ -2074,6 +2078,7 @@
 			<artifactId>activemq-spring</artifactId>
 			<version>5.11.0</version>
 		</dependency>
+		-->
 		<!--  
 		<dependency>
 			<groupId>javax.annotation</groupId>
@@ -2088,17 +2093,6 @@
 		</dependency>
 		
 		<!-- 2015/02/25 -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>ooxml-schemas</artifactId>
-			<version>1.1</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>xmlbeans</artifactId>
-					<groupId>org.apache.xmlbeans</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.xmlbeans</groupId>
 			<artifactId>xmlbeans</artifactId>
