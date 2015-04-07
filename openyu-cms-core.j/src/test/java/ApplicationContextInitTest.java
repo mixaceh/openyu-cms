@@ -2,7 +2,6 @@ import static org.junit.Assert.assertNotNull;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
-import org.apache.velocity.app.VelocityEngine;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.config.PropertyOverrideConfigurer;
@@ -12,8 +11,6 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.velocity.VelocityConfigurer;
 import org.openyu.commons.junit.supporter.BaseTestSupporter;
 import org.openyu.commons.util.ConfigHelper;
-
-import freemarker.template.Configuration;
 
 public class ApplicationContextInitTest extends BaseTestSupporter {
 
