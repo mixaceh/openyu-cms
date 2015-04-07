@@ -50,7 +50,7 @@
 		</property>
 	</bean>
 
-	<bean id="propertyConfigurer"
+	<bean id="propertyPlaceholderConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="order" value="1" />
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
@@ -81,7 +81,7 @@
 		<property name="configLocation" value="/WEB-INF/config/etc/velocity.properties" />
 	</bean>
 
-	<!-- freeMarker -->
+	<!-- freemarker -->
 	<bean id="freeMarkerConfigurer"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
 		<property name="templateLoaderPath" value="/WEB-INF/custom/template/ftl" />

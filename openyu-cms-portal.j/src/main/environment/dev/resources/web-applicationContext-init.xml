@@ -57,27 +57,7 @@
 		<property name="locations">
 			<list>
 				<value>/WEB-INF/config/etc/database.properties</value>
-				<value>/WEB-INF/config/etc/database-log.properties
-				</value>
-				
-				<!-- hbase zookeeper -->
-				<value>/WEB-INF/config/etc/hbase-zookeeper.properties
-				</value>
-				
-				<!-- hbase thrift -->
-				<value>/WEB-INF/config/etc/hbase-thrift.properties
-				</value>
-
-				<!-- cassandra thrift -->
-				<value>/WEB-INF/config/etc/cassandra-thrift.properties
-				</value>
-
-				<!-- commons net ftp -->
-				<value>/WEB-INF/config/etc/commons-net-ftp.properties
-				</value>
-
-				<!--  rabbit mq -->
-				<value>/WEB-INF/config/etc/rabbitmq.properties</value>
+				<value>/WEB-INF/config/etc/database-log.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -101,17 +81,18 @@
 			<list>
 			</list>
 		</property>
-	</bean>  	
+	</bean>
 
 	<!-- velocity -->
-	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+	<bean id="velocityConfigurer"
+		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
 		<property name="resourceLoaderPath" value="/WEB-INF/custom/template/vm" />
 		<property name="configLocation" value="/WEB-INF/config/etc/velocity.properties" />
 	</bean>
 
-	<!-- freeMarker -->
-	<bean id="freeMarkerConfiguration"
-		class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+	<!-- freemarker -->
+	<bean id="freeMarkerConfigurer"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
 		<property name="templateLoaderPath" value="/WEB-INF/custom/template/ftl" />
 		<property name="configLocation" value="/WEB-INF/config/etc/freemarker.properties" />
 	</bean>

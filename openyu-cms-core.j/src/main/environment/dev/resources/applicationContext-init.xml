@@ -78,7 +78,7 @@
 		<property name="configLocation" value="file:../etc/velocity.properties" />
 	</bean>
 
-	<!-- freeMarker -->
+	<!-- freemarker -->
 	<bean id="freeMarkerConfigurer"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
 		<property name="templateLoaderPath" value="file:../custom/template/ftl" />
