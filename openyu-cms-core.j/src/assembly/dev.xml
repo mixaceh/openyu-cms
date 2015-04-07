@@ -19,9 +19,9 @@
 		<fileSet>
 			<outputDirectory>/</outputDirectory>
 			<includes>
-				<include>LICENSE.txt</include>
-				<include>NOTICE.txt</include>
-				<include>README.txt</include>
+				<include>LICENSE.md</include>
+				<include>NOTICE.md</include>
+				<include>README.md</include>
 			</includes>
 		</fileSet>
 		<fileSet>

@@ -54,8 +54,8 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
-				<value>../etc/database.properties</value>
-				<value>../etc/database-log.properties</value>
+				<value>file:../etc/database.properties</value>
+				<value>file:../etc/database-log.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -66,8 +66,7 @@
 		<property name="ignoreUnresolvablePlaceholders" value="true" />
 		<property name="locations">
 			<list>
-				<value>../etc/authKeyService.properties
-				</value>
+				<value>file:../etc/authKeyService.properties</value>
 			</list>
 		</property>
 	</bean>

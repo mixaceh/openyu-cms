@@ -13,7 +13,7 @@
 	<bean id="scheduler"
 		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="schedulerName" value="scheduler" />
-		<property name="configLocation" value="file:src/test/config/etc/quartz.properties" />
+		<property name="configLocation" value="file:../etc/quartz.properties" />
 		<property name="autoStartup" value="true" />
 		<property name="triggers">
 			<list>

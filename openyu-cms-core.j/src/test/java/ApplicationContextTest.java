@@ -8,10 +8,10 @@ public class ApplicationContextTest extends BaseTestSupporter {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		beg = System.currentTimeMillis();
+		begTime = System.nanoTime();
 		applicationContext = new ClassPathXmlApplicationContext(
 				new String[] { "applicationContext.xml" });
-		end = System.currentTimeMillis();
+		endTime = System.nanoTime();
 	}
 
 	@Test
