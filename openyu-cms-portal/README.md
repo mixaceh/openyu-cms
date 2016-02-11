@@ -1,1 +1,1 @@
-# OpenYu Content Management System Portal Java
+# OpenYu Content Management System Portal
