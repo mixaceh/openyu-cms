@@ -9,9 +9,9 @@ import org.hibernate.engine.spi.SessionImplementor;
 import org.openyu.cms.module.vo.CatalogItem;
 import org.openyu.cms.module.vo.ModuleItem.ColumnType;
 import org.openyu.cms.module.vo.impl.CatalogItemImpl;
-import org.openyu.commons.entity.userType.NamesBeanUserType;
+import org.openyu.commons.entity.usertype.NamesBeanUserType;
 import org.openyu.commons.enumz.EnumHelper;
-import org.openyu.commons.hibernate.userType.supporter.BaseUserTypeSupporter;
+import org.openyu.commons.hibernate.usertype.supporter.BaseUserTypeSupporter;
 import org.openyu.commons.lang.ArrayHelper;
 
 public class CatalogItemsUserType extends BaseUserTypeSupporter {

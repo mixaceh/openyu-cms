@@ -8,9 +8,9 @@ import org.apache.commons.lang.StringUtils;
 import org.hibernate.engine.spi.SessionImplementor;
 import org.openyu.cms.vote.vo.VoteItem;
 import org.openyu.cms.vote.vo.impl.VoteItemImpl;
-import org.openyu.commons.entity.userType.NamesBeanUserType;
+import org.openyu.commons.entity.usertype.NamesBeanUserType;
 import org.openyu.commons.enumz.EnumHelper;
-import org.openyu.commons.hibernate.userType.supporter.BaseUserTypeSupporter;
+import org.openyu.commons.hibernate.usertype.supporter.BaseUserTypeSupporter;
 import org.openyu.commons.lang.ArrayHelper;
 
 public class VoteItemsUserType extends BaseUserTypeSupporter {

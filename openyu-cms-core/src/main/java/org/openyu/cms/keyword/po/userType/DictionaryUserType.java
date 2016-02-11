@@ -7,7 +7,7 @@ import org.hibernate.engine.spi.SessionImplementor;
 import org.openyu.cms.keyword.vo.Dictionary;
 import org.openyu.cms.keyword.vo.impl.DictionaryImpl;
 import org.openyu.commons.enumz.EnumHelper;
-import org.openyu.commons.hibernate.userType.supporter.BaseUserTypeSupporter;
+import org.openyu.commons.hibernate.usertype.supporter.BaseUserTypeSupporter;
 import org.openyu.commons.lang.ArrayHelper;
 
 public class DictionaryUserType extends BaseUserTypeSupporter {
