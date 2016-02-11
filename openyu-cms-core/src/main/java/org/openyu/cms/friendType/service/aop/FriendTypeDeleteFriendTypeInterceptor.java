@@ -10,8 +10,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import org.openyu.cms.app.service.aop.AppMethodInterceptorSupporter;
+import org.openyu.cms.app.aop.supporter.AppAroundAdviceSupporter;
 import org.openyu.cms.friendType.service.FriendTypeLogService;
 import org.openyu.cms.friendType.vo.ActionType;
 import org.openyu.cms.friendType.vo.FriendType;
@@ -21,7 +20,7 @@ import org.openyu.commons.util.CollectionHelper;
 /**
  * 刪除友情類型攔截器
  */
-public class FriendTypeDeleteFriendTypeInterceptor extends AppMethodInterceptorSupporter
+public class FriendTypeDeleteFriendTypeInterceptor extends AppAroundAdviceSupporter
 {
 
 	private static transient final Logger log = LogManager

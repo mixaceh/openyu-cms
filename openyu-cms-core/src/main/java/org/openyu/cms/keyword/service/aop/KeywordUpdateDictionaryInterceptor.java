@@ -7,9 +7,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import org.openyu.cms.app.service.aop.AppMethodInterceptorSupporter;
 import org.openyu.cms.keyword.vo.Dictionary;
+import org.openyu.cms.app.aop.supporter.AppAroundAdviceSupporter;
 import org.openyu.cms.keyword.service.KeywordLogService;
 import org.openyu.cms.keyword.vo.ActionType;
 import org.openyu.cms.keyword.vo.Keyword;
@@ -18,7 +17,7 @@ import org.openyu.cms.user.vo.User;
 /**
  * 修改關鍵字攔截器
  */
-public class KeywordUpdateDictionaryInterceptor extends AppMethodInterceptorSupporter
+public class KeywordUpdateDictionaryInterceptor extends AppAroundAdviceSupporter
 {
 
 	private static transient final Logger log = LogManager

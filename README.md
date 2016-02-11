@@ -1,1 +1,1 @@
-# OpenYu Content Management System Java
+# OpenYu Content Management System

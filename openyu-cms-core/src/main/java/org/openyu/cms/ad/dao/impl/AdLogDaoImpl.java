@@ -13,8 +13,7 @@ import org.openyu.cms.ad.log.impl.AdLogImpl;
 import org.openyu.commons.dao.inquiry.Inquiry;
 import org.openyu.commons.lang.StringHelper;
 
-public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
-{
+public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao {
 
 	private static transient final Logger log = LogManager.getLogger(AdLogDaoImpl.class);
 
@@ -23,8 +22,8 @@ public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
 	 */
 	private static final String AD_LOG_PO_NAME = AdLogImpl.class.getName();
 
-	public AdLogDaoImpl()
-	{}
+	public AdLogDaoImpl() {
+	}
 
 	// --------------------------------------------------
 	// AdLevelLog
@@ -37,8 +36,7 @@ public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
 	 * @param clientIp
 	 * @return
 	 */
-	public List<AdLog> findAdLog(long siteSeq, String userId, String clientIp)
-	{
+	public List<AdLog> findAdLog(long siteSeq, String userId, String clientIp) {
 
 		return findAdLog(null, siteSeq, userId, clientIp);
 	}
@@ -50,8 +48,7 @@ public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
 	 * @param siteSeq
 	 * @return
 	 */
-	public List<AdLog> findAdLog(Inquiry inquiry, long siteSeq)
-	{
+	public List<AdLog> findAdLog(Inquiry inquiry, long siteSeq) {
 		return findAdLog(inquiry, siteSeq, null, null);
 	}
 
@@ -64,8 +61,7 @@ public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
 	 * @param clientIp
 	 * @return
 	 */
-	public List<AdLog> findAdLog(Inquiry inquiry, long siteSeq, String userId, String clientIp)
-	{
+	public List<AdLog> findAdLog(Inquiry inquiry, long siteSeq, String userId, String clientIp) {
 		Map<String, Object> params = new LinkedHashMap<String, Object>();
 		//
 		StringBuilder hql = new StringBuilder();
@@ -73,23 +69,20 @@ public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
 		hql.append(AD_LOG_PO_NAME + " ");
 		hql.append("where 1=1 ");
 
-		//siteSeq
-		if (siteSeq > 0)
-		{
+		// siteSeq
+		if (siteSeq > 0) {
 			hql.append("and siteSeq = :siteSeq ");
 			params.put("siteSeq", siteSeq);
 		}
 
-		//userId
-		if (StringHelper.notBlank(userId))
-		{
+		// userId
+		if (StringHelper.notBlank(userId)) {
 			hql.append("and userId = :userId ");
 			params.put("userId", userId);
 		}
 
-		//clientIp
-		if (StringHelper.notBlank(clientIp))
-		{
+		// clientIp
+		if (StringHelper.notBlank(clientIp)) {
 			hql.append("and clientIp = :clientIp ");
 			params.put("clientIp", clientIp);
 		}
@@ -104,8 +97,7 @@ public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
 	 * @param userId
 	 * @return
 	 */
-	public int deleteAdLog(long siteSeq, String userId)
-	{
+	public int deleteAdLog(long siteSeq, String userId) {
 		Map<String, Object> params = new LinkedHashMap<String, Object>();
 		//
 		StringBuilder hql = new StringBuilder();
@@ -113,11 +105,11 @@ public class AdLogDaoImpl extends AppLogDaoSupporter implements AdLogDao
 		hql.append(AD_LOG_PO_NAME + " ");
 		hql.append("where 1=1 ");
 
-		//siteSeq
+		// siteSeq
 		hql.append("and siteSeq = :siteSeq ");
 		params.put("siteSeq", siteSeq);
 
-		//userId
+		// userId
 		hql.append("and userId = :userId ");
 		params.put("userId", userId);
 		//

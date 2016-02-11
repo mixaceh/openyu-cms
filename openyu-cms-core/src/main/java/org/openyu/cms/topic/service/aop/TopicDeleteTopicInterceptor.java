@@ -10,8 +10,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import org.openyu.cms.app.service.aop.AppMethodInterceptorSupporter;
+import org.openyu.cms.app.aop.supporter.AppAroundAdviceSupporter;
 import org.openyu.cms.topic.service.TopicLogService;
 import org.openyu.cms.topic.vo.ActionType;
 import org.openyu.cms.topic.vo.Topic;
@@ -21,7 +20,7 @@ import org.openyu.commons.util.CollectionHelper;
 /**
  * 刪除專題攔截器
  */
-public class TopicDeleteTopicInterceptor extends AppMethodInterceptorSupporter
+public class TopicDeleteTopicInterceptor extends AppAroundAdviceSupporter
 {
 
 	private static transient final Logger log = LogManager

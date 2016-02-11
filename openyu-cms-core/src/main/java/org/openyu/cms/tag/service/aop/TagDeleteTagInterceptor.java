@@ -10,8 +10,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import org.openyu.cms.app.service.aop.AppMethodInterceptorSupporter;
+import org.openyu.cms.app.aop.supporter.AppAroundAdviceSupporter;
 import org.openyu.cms.tag.service.TagLogService;
 import org.openyu.cms.tag.vo.ActionType;
 import org.openyu.cms.tag.vo.Tag;
@@ -21,7 +20,7 @@ import org.openyu.commons.util.CollectionHelper;
 /**
  * 刪除標籤攔截器
  */
-public class TagDeleteTagInterceptor extends AppMethodInterceptorSupporter
+public class TagDeleteTagInterceptor extends AppAroundAdviceSupporter
 {
 
 	private static transient final Logger log = LogManager.getLogger(TagDeleteTagInterceptor.class);

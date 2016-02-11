@@ -10,18 +10,17 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
-import org.openyu.cms.app.service.aop.AppMethodInterceptorSupporter;
 import org.openyu.cms.adSpace.service.AdSpaceLogService;
 import org.openyu.cms.adSpace.vo.ActionType;
 import org.openyu.cms.adSpace.vo.AdSpace;
+import org.openyu.cms.app.aop.supporter.AppAroundAdviceSupporter;
 import org.openyu.cms.user.vo.User;
 import org.openyu.commons.util.CollectionHelper;
 
 /**
  * 刪除廣告版位攔截器
  */
-public class AdSpaceDeleteAdSpaceInterceptor extends AppMethodInterceptorSupporter
+public class AdSpaceDeleteAdSpaceInterceptor extends AppAroundAdviceSupporter
 {
 
 	private static transient final Logger log = LogManager

@@ -5,17 +5,15 @@ import java.util.Locale;
 import org.openyu.cms.app.log.AppLogEntity;
 import org.openyu.cms.app.service.AppLogService;
 import org.openyu.cms.user.vo.User;
-import org.openyu.commons.service.supporter.BaseLogServiceSupporter;
+import org.openyu.commons.service.supporter.LogServiceSupporter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class AppLogServiceSupporter extends BaseLogServiceSupporter
-		implements AppLogService {
+public class AppLogServiceSupporter extends LogServiceSupporter implements AppLogService {
 
 	private static final long serialVersionUID = 4647698815973054546L;
 
-	private static transient final Logger LOGGER = LoggerFactory
-			.getLogger(AppLogServiceSupporter.class);
+	private static transient final Logger LOGGER = LoggerFactory.getLogger(AppLogServiceSupporter.class);
 
 	public AppLogServiceSupporter() {
 	}

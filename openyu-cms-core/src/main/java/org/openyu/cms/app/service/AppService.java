@@ -1,11 +1,11 @@
 package org.openyu.cms.app.service;
 
-import org.openyu.commons.service.OjService;
+import org.openyu.commons.service.CommonService;
 
 /**
  * 應用服務
  */
-public interface AppService extends OjService
+public interface AppService extends CommonService
 {
 	/**
 	 * 版本,每次上傳svn,加1
