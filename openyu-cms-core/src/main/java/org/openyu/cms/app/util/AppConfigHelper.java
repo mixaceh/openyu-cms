@@ -7,19 +7,19 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.context.support.ServletContextResource;
+import org.openyu.commons.helper.supporter.BaseHelperSupporter;
 import org.openyu.commons.util.ConfigHelper;
 
 /**
- * 1.預設設定檔: src/test/config/etc/config.xml
+ * 1.預設設定檔: src/test/config/etc/configuration.xml
  * 
  * 2.直接使用static方法取值
  * 
- * 3.可利用spring重新給設定檔路徑configLocation
+ * 3.可利用spring重新給設定檔路徑configurationResource
  */
-public class AppConfigHelper extends ConfigHelper {
+public final class AppConfigHelper extends BaseHelperSupporter {
 
-	private static transient final Logger LOGGER = LoggerFactory
-			.getLogger(ConfigHelper.class);
+	private static transient final Logger LOGGER = LoggerFactory.getLogger(AppConfigHelper.class);
 
 	// --------------------------------------------------------
 	// default path
@@ -27,8 +27,7 @@ public class AppConfigHelper extends ConfigHelper {
 	/**
 	 * 預設資源相對路徑
 	 */
-	private final static String DEFAULT_RESOURCE_PATH = "custom"
-			+ File.separator + "resource";
+	private final static String DEFAULT_RESOURCE_PATH = "custom" + File.separator + "resource";
 
 	/**
 	 * 資源相對路徑
@@ -49,8 +48,7 @@ public class AppConfigHelper extends ConfigHelper {
 	/**
 	 * 預設樣版相對路徑
 	 */
-	private final static String DEFAULT_TEMPLATE_PATH = "custom"
-			+ File.separator + "template";
+	private final static String DEFAULT_TEMPLATE_PATH = "custom" + File.separator + "template";
 
 	/**
 	 * 樣版相對路徑
@@ -71,8 +69,7 @@ public class AppConfigHelper extends ConfigHelper {
 	/**
 	 * 預設Backup相對路徑
 	 */
-	private final static String DEFAULT_BACKUP_PATH = "custom" + File.separator
-			+ "buckup";
+	private final static String DEFAULT_BACKUP_PATH = "custom" + File.separator + "buckup";
 
 	/**
 	 * Backup相對路徑
@@ -111,12 +108,10 @@ public class AppConfigHelper extends ConfigHelper {
 	public static void setResourcePath(String resourcePath) {
 		try {
 			AppConfigHelper.resourcePath = resourcePath;
-			AppConfigHelper.resourcePathLocation = new FileSystemResource(
-					resourcePath);
-			AppConfigHelper.resourceAbsolutePath = resourcePathLocation
-					.getFile().getAbsolutePath();
+			AppConfigHelper.resourcePathLocation = new FileSystemResource(resourcePath);
+			AppConfigHelper.resourceAbsolutePath = resourcePathLocation.getFile().getAbsolutePath();
 			//
-			buildDir(DEFAULT_RESOURCE_PATH, resourcePathLocation, resourcePath);
+			ConfigHelper.buildDir(resourcePathLocation, resourcePath);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -135,13 +130,11 @@ public class AppConfigHelper extends ConfigHelper {
 				AppConfigHelper.resourcePath = recource.getPathWithinContext();
 			} else {
 				// WebContent/custom/resource
-				AppConfigHelper.resourcePath = resourcePathLocation.getFile()
-						.getPath();
+				AppConfigHelper.resourcePath = resourcePathLocation.getFile().getPath();
 			}
-			AppConfigHelper.resourceAbsolutePath = resourcePathLocation
-					.getFile().getAbsolutePath();
+			AppConfigHelper.resourceAbsolutePath = resourcePathLocation.getFile().getAbsolutePath();
 			//
-			buildDir(DEFAULT_RESOURCE_PATH, resourcePathLocation, null);
+			ConfigHelper.buildDir(resourcePathLocation, null);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -163,12 +156,10 @@ public class AppConfigHelper extends ConfigHelper {
 	public static void setTemplatePath(String templatePath) {
 		try {
 			AppConfigHelper.templatePath = templatePath;
-			AppConfigHelper.templatePathLocation = new FileSystemResource(
-					templatePath);
-			AppConfigHelper.templateAbsolutePath = templatePathLocation
-					.getFile().getAbsolutePath();
+			AppConfigHelper.templatePathLocation = new FileSystemResource(templatePath);
+			AppConfigHelper.templateAbsolutePath = templatePathLocation.getFile().getAbsolutePath();
 			//
-			buildDir(DEFAULT_TEMPLATE_PATH, templatePathLocation, templatePath);
+			ConfigHelper.buildDir(templatePathLocation, templatePath);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -187,13 +178,11 @@ public class AppConfigHelper extends ConfigHelper {
 				AppConfigHelper.templatePath = recource.getPathWithinContext();
 			} else {
 				// WebContent/WEB-INF/custom/template
-				AppConfigHelper.templatePath = templatePathLocation.getFile()
-						.getPath();
+				AppConfigHelper.templatePath = templatePathLocation.getFile().getPath();
 			}
-			AppConfigHelper.templateAbsolutePath = templatePathLocation
-					.getFile().getAbsolutePath();
+			AppConfigHelper.templateAbsolutePath = templatePathLocation.getFile().getAbsolutePath();
 			//
-			buildDir(DEFAULT_TEMPLATE_PATH, templatePathLocation, null);
+			ConfigHelper.buildDir(templatePathLocation, null);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -215,12 +204,10 @@ public class AppConfigHelper extends ConfigHelper {
 	public static void setBackupPath(String backupPath) {
 		try {
 			AppConfigHelper.backupPath = backupPath;
-			AppConfigHelper.backupPathLocation = new FileSystemResource(
-					backupPath);
-			AppConfigHelper.backupAbsolutePath = backupPathLocation.getFile()
-					.getAbsolutePath();
+			AppConfigHelper.backupPathLocation = new FileSystemResource(backupPath);
+			AppConfigHelper.backupAbsolutePath = backupPathLocation.getFile().getAbsolutePath();
 			//
-			buildDir(DEFAULT_BACKUP_PATH, backupPathLocation, backupPath);
+			ConfigHelper.buildDir(backupPathLocation, backupPath);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -239,13 +226,11 @@ public class AppConfigHelper extends ConfigHelper {
 				AppConfigHelper.backupPath = recource.getPathWithinContext();
 			} else {
 				// WebContent/WEB-INF/custom/backup
-				AppConfigHelper.backupPath = backupPathLocation.getFile()
-						.getPath();
+				AppConfigHelper.backupPath = backupPathLocation.getFile().getPath();
 			}
-			AppConfigHelper.backupAbsolutePath = backupPathLocation.getFile()
-					.getAbsolutePath();
+			AppConfigHelper.backupAbsolutePath = backupPathLocation.getFile().getAbsolutePath();
 			//
-			buildDir(DEFAULT_BACKUP_PATH, backupPathLocation, null);
+			ConfigHelper.buildDir(backupPathLocation, null);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

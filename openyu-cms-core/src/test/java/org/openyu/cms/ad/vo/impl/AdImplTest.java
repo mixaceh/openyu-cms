@@ -10,11 +10,12 @@ import org.openyu.cms.ad.vo.Ad.AdType;
 import org.openyu.cms.ad.vo.impl.AdImpl;
 import org.openyu.cms.adSpace.vo.AdSpace;
 import org.openyu.cms.adSpace.vo.impl.AdSpaceImpl;
-import org.openyu.cms.app.AppBeanTestSupporter;
 import org.openyu.cms.site.vo.Site;
 import org.openyu.cms.site.vo.impl.SiteImpl;
+import org.openyu.commons.collector.CollectorHelper;
+import org.openyu.commons.junit.supporter.BaseTestSupporter;
 
-public class AdImplTest extends AppBeanTestSupporter {
+public class AdImplTest extends BaseTestSupporter {
 
 	@Test
 	public void writeToXml() {
@@ -48,14 +49,14 @@ public class AdImplTest extends AppBeanTestSupporter {
 		adSpace.setSeq(1);
 		value.setAdSpace(adSpace);
 		//
-		String result = beanCollector.writeToXml(AdImpl.class, value);
+		String result = CollectorHelper.writeToXml(AdImpl.class, value);
 		System.out.println(result);
 		assertNotNull(result);
 	}
 
 	@Test
 	public void readFromXml() {
-		Ad result = beanCollector.readFromXml(AdImpl.class);
+		Ad result = CollectorHelper.readFromXml(AdImpl.class);
 		System.out.println(result);
 		assertNotNull(result);
 	}

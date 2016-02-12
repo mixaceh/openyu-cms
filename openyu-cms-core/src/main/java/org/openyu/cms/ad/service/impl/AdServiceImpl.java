@@ -1,7 +1,5 @@
 package org.openyu.cms.ad.service.impl;
 
-import java.io.Serializable;
-import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
@@ -17,14 +15,14 @@ import org.openyu.cms.ad.service.AdService;
 import org.openyu.cms.ad.vo.Ad;
 import org.openyu.cms.ad.vo.AdCollector;
 import org.openyu.cms.site.vo.Site;
-import org.openyu.cms.ad.vo.impl.AdImpl;
-import org.openyu.cms.user.vo.User;
 import org.openyu.commons.dao.inquiry.Inquiry;
 import org.openyu.commons.lang.ClassHelper;
 
 public class AdServiceImpl extends AppServiceSupporter implements AdService {
-	private static transient final Logger log = LogManager
-			.getLogger(AdServiceImpl.class);
+
+	private static final long serialVersionUID = 1L;
+
+	private static transient final Logger log = LogManager.getLogger(AdServiceImpl.class);
 
 	protected transient AdCollector adCollector = AdCollector.getInstance();
 
@@ -32,13 +30,13 @@ public class AdServiceImpl extends AppServiceSupporter implements AdService {
 	}
 
 	public AdDao getAdDao() {
-		return (AdDao) getOjDao();
+		return (AdDao) getCommonDao();
 	}
 
 	@Autowired
 	@Qualifier("adDao")
 	public void setAdDao(AdDao adDao) {
-		setOjDao(adDao);
+		setCommonDao(adDao);
 	}
 
 	/**
@@ -153,8 +151,7 @@ public class AdServiceImpl extends AppServiceSupporter implements AdService {
 	 * @param searcher
 	 * @return
 	 */
-	public List<Ad> findAd(Inquiry inquiry, Locale locale, long siteSeq,
-			Ad searcher) {
+	public List<Ad> findAd(Inquiry inquiry, Locale locale, long siteSeq, Ad searcher) {
 		List<AdPo> orig = getAdDao().findAd(inquiry, locale, siteSeq, searcher);
 		return ClassHelper.copyProperties(orig);
 	}
@@ -168,10 +165,8 @@ public class AdServiceImpl extends AppServiceSupporter implements AdService {
 	 * @param searcher
 	 * @return
 	 */
-	public List<Ad> findAd(Inquiry inquiry, Locale locale, Site siteSearcher,
-			Ad searcher) {
-		List<AdPo> orig = getAdDao().findAd(inquiry, locale, siteSearcher,
-				searcher);
+	public List<Ad> findAd(Inquiry inquiry, Locale locale, Site siteSearcher, Ad searcher) {
+		List<AdPo> orig = getAdDao().findAd(inquiry, locale, siteSearcher, searcher);
 		return ClassHelper.copyProperties(orig);
 	}
 

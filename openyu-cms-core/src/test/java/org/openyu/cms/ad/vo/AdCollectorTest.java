@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Locale;
 import java.util.Map;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.openyu.cms.ad.vo.Ad;
 import org.openyu.cms.ad.vo.Ad.AdType;
@@ -27,8 +28,14 @@ import org.openyu.commons.dao.inquiry.impl.InquiryImpl;
 import org.openyu.commons.dao.inquiry.impl.OrderImpl;
 import org.openyu.commons.dao.inquiry.impl.PaginationImpl;
 import org.openyu.commons.dao.inquiry.impl.SortImpl;
+import org.openyu.commons.junit.supporter.BaseTestSupporter;
 
-public class AdCollectorTest extends AppBeanTestSupporter {
+import com.carrotsearch.junitbenchmarks.BenchmarkRule;
+
+public class AdCollectorTest extends BaseTestSupporter {
+
+	@Rule
+	public BenchmarkRule benchmarkRule = new BenchmarkRule();
 
 	@Test
 	// mock data

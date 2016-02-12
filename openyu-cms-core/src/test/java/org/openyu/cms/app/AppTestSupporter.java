@@ -37,14 +37,14 @@ public class AppTestSupporter extends BaseTestSupporter {
 	// ---------------------------------------------------
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		applicationContext = new ClassPathXmlApplicationContext(new String[] {
-				"applicationContext-init.xml",//
-				"META-INF/applicationContext-commons-core.xml",//
-				"applicationContext-message.xml",//
-				"applicationContext-database.xml",//
-				"applicationContext-database-log.xml",//
-				"applicationContext-cxf.xml",//
-				"applicationContext-schedule.xml",//
+		applicationContext = new ClassPathXmlApplicationContext(new String[] { //
+				"applicationContext-init.xml", //
+				"META-INF/applicationContext-commons-core.xml", //
+				"applicationContext-message.xml", //
+				"applicationContext-database.xml", //
+				"applicationContext-database-log.xml", //
+				"applicationContext-cxf.xml", //
+				"applicationContext-schedule.xml", //
 				"org/openyu/cms/app/applicationContext-app.xml",//
 		});
 		// ---------------------------------------------------
@@ -53,19 +53,13 @@ public class AppTestSupporter extends BaseTestSupporter {
 	}
 
 	protected static void initialize() {
-		txManager = (HibernateTransactionManager) applicationContext
-				.getBean("txManager");
-		sessionFactory = (SessionFactory) applicationContext
-				.getBean("sessionFactory");
-		logTxManager = (HibernateTransactionManager) applicationContext
-				.getBean("logTxManager");
-		logSessionFactory = (SessionFactory) applicationContext
-				.getBean("logSessionFactory");
+		txManager = (HibernateTransactionManager) applicationContext.getBean("txManager");
+		sessionFactory = (SessionFactory) applicationContext.getBean("sessionFactory");
+		logTxManager = (HibernateTransactionManager) applicationContext.getBean("logTxManager");
+		logSessionFactory = (SessionFactory) applicationContext.getBean("logSessionFactory");
 		//
-		velocityEngine = (VelocityEngine) applicationContext
-				.getBean("velocityEngine");
-		freeMarkerConfiguration = (Configuration) applicationContext
-				.getBean("freeMarkerConfiguration");
+		velocityEngine = (VelocityEngine) applicationContext.getBean("velocityEngine");
+		freeMarkerConfiguration = (Configuration) applicationContext.getBean("freeMarkerConfiguration");
 	}
 
 	// --------------------------------------------------
